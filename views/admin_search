@@ -1,0 +1,133 @@
+  <style>
+
+.box {
+  border: 1px solid black;
+  width: 200px;
+  height: 220px;
+  padding: 5px;
+  margin: 10px;
+  float: left;
+}
+.ctn img {
+  background-size: cover;
+  width: 180px;
+  height: 150px;
+}
+.ctn input {
+  cursor: pointer;
+}
+
+.search  {
+        margin:10px;
+}
+
+.s input {
+  width: 350px!important;
+  margin-left: -20px;
+}
+.go {
+  margin-left: -30px;
+}
+.c {
+  padding: 20px;
+}
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/admin">Admin's name</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/admin_search">Search</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Add User</a>
+      </li>
+        <li class="nav-item">
+         <a class="nav-link" href="/admin-mail-page">Send Mail</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <div class='row search'>
+    <div class='col-6'>
+
+
+<!--//        <div class="formContainer">
+//        <form class="form-inline searchForm" action="/process-search" method="POST">
+//              <input class="form-control" name="search" placeholder="Search actors" aria-label="Search">
+//                    <button class="btn btn-success" type="submit">Search</button>
+//              </form>-->
+<div class="row c">
+<form class="form-inline searchForm" action="/process-search" method="POST">
+<select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="search_select">
+<option value="0">Search by...</option>
+<option value="1">Search by firsname</option>
+<option value="2">Search by lastname</option>
+<option value="3">Search by email</option>
+</select>
+  <div class="col s">
+    <input type="text" name="search"  class="form-control" placeholder="search">
+  </div>
+<div class="col go">
+  <button type="submit" class="btn btn-primary">Go</button>
+</div>
+</form>
+    </div>
+
+
+        </div>
+     </div>
+  </div>
+
+<div class='col-12'>
+<div class='ctn'>
+
+</div>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            $(".searchForm").on("submit", function(evt){
+                evt.preventDefault();
+                $.ajax({
+                        url: "/process-search",
+                        type: "POST",
+                        data: $(this).serialize(),
+
+                        success: function(data){
+                        if(data.success){
+                           console.log(data.success);
+                           var result = data.success;
+                        for(var i = 0; i<result.length; i++) {
+                                //var doc = document.getElementById('list');
+                                //$("#list").append("<li>" + result[i].first_name +", "+ result[i].last_name + "</li>");
+$(".ctn").append("<div class='box'> <input type='checkbox' name='checkbox-'" +i+ "id='checkbox-'" +i+ "></br>" +
+"  <img src='https://media.istockphoto.com/photos/closeup-of-mixedbreed-monkey-between-chimpanzee-and-bonobo-smiling-picture-id119838172?k=6&m=119838172&s=612x612&w=0&h=C6yKSGBkRi_85jnSv1aryQWKu08QKq6aLXWJGpHVd90='>" +
+"<p>" +result[i].first_name +", "+ result[i].last_name +"</p></div>");
+                        }
+                        } else {
+                            console.log("error");
+                        }
+                    },
+                    error: function(){
+                        console.log("There was a problem.");
+                    }
+                });
+            });
+        });
+
+</script>

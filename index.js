@@ -1,102 +1,95 @@
-// New fortunes at lib/fortune.js
 var express = require('express');
-//var fortune = require('./lib/fortune.js');
+//var credentials = require('./credentials.js');
+var expressValidator = require('express-validator');
+var formidable = require('formidable');
+var mysql = require('mysql');
+var fs = require('fs');
 var app = express();
-var handlebars = require('express-handlebars').create({ defaultLayout:'main', helpers: {
-        section: function(name, options){
-            if(!this._sections) this._sections = {};
-            this._sections[name] = options.fn(this);
-            return null;
-        }
-    }
- });
-
-// Tell Express loading Handlebars
-app.engine('handlebars', handlebars.engine);
-app.set('view engine', 'handlebars');
-
-// Set Port
-app.set('port', process.env.PORT || 4000);
-
-// Chai and Mocha Test
-app.use(function(req, res, next) {
-  res.locals.showTests = app.get('env') !== 'production' && req.query.test === '1';
-  next();
+var handlebars = require('express-handlebars').create({defaultLayout:"main"});
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+        host: 'fkonat.it.pointpark.edu',
+        user: 'lunamista',
+        password: 'lunamista123',
+        database:'lunadb'
 });
 
-// Looks for files in Public Dir
-app.use(express.static(__dirname + '/public'));
+app.engine("handlebars",handlebars.engine);
+app.set("view engine","handlebars");
+app.set('port', process.env.PORT || 4000);
+app.use(express.static(__dirname +'/public'));
+app.use( function( req, res, next){
+  res.locals.showTests = app.get(' env') !== 'production' && req.query.test === '1';
+  next();
+ });
+app.use(require('body-parser').urlencoded({extended:true}));
+//app.use(require('cookie-parser')(credentials.cookieSecret));
+/*
+app.use(require('express-session')({
+ resave:false,
+ saveUninitialized:false,
+ secret:credentials.cookieSecret
+}));
+*/
 
-// Render looks in views for file name in extenstion
-
+//app.get("/", function(req,res){
+//    res.render("home");
+//});
 // Root Dir
 app.get('/', function(req, res) {
-  res.render('home');
+  res.render('landing');
+});
+app.get('/admin_page', function(req, res) {
+        res.render('admin_page');
 });
 
-// To redirect After login given
-// TODO Check Login succsess
-app.post('/', [function(req, res, next) {
-  next();
-}, function(req, res) {
-  res.render('addUser');
-}]);
-
-// Movie DB Test
-app.get('/addUSer', function(req, res) {
-  res.render('addUser');
+app.get('/admin_mail', function(req, res) {
+        res.render('admin_mail');
+})
+app.get('/admin_search', function(req, res) {
+        res.render('admin_search');
 });
 
-// To redirect After User has been added
-app.post('/addUser', [function(req, res, next) {
-  next();
-}, function(req, res) {
-  res.render('home');
-
-}]);
-
-// Date Dir
-app.get('/datetime', function(req, res) {
-  var date = new Date();
-  res.render('datetime', { datetime: date});
+app.post('/process-search', function(req, res) {
+         var search = req.body.search;
+       // console.log(search);
+        var q = "SELECT * FROM users WHERE first_name LIKE '%" + search +"%'";
+        connection.query(q, function(err, results) {
+         if (err) throw err;
+           res.send({success: results});
+         });
 });
 
 
-// About Dir with Chai and Mocha
-app.get('/about', function(req,res){
-  res.render('about', { fortune: fortune.getFortune(), pageTestScript: '/qa/tests-about.js'});
-});
-// hood-river
-app.get('/tours/hood-river', function(req, res){
-        res.render('tours/hood-river');
+app.get("/history", function(req,res){
+  if(req.session.admin_id){
+  }else {
+    res.render("searchhistory",{admin:req.session.firstName,adminlogin:req.session.admin_id});
+  }
 });
 
-// Oregon Tours
-app.get('/tours/oregon-coast', function(req, res){
-        res.render('tours/oregon-coast');
+app.get("/creatnewaccount", function(req,res){
+  res.render("addUser");
+});
+app.get("/forgotpassword", function(req,res){
+  res.render("forgotpassword");
+});
+app.get("/search", function(req,res){
+  res.render("search");
 });
 
-
-// request group rate
-app.get('/tours/request-group-rate', function(req, res){
-        res.render('tours/request-group-rate');
-});
-
-// custom 404 page
+//custom 404 page
 app.use(function(req, res){
   res.status(404);
-  res.render('404');
+  res.render("404");
 });
-
-// custom 500 page
+//custom 500 page
 app.use(function(err, req, res, next){
-  console.error(err.stack);
-  res.type('text/ plain');
+  console.log(err.stack);
   res.status(500);
-  res.render('500');
+  res.render("500");
 });
 
-// Listen to APP for Port
-app.listen(app.get('port'), function(){ console.log('Express started on http:// localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
+app.listen(app.get('port'), function(){
+console.log('listening on http:// localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
-

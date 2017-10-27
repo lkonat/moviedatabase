@@ -1,0 +1,28 @@
+
+{{#if adminlogin }}
+<div id="history_container" style="width:1000px; margin: 0 auto; color:white;">
+  <center><h3>Search History</h3></center>
+  <table style="width:100%;">
+    <tr style="background-color:darkgrey;"><td></td><td>Title</td><td>Actors</td><td>Status</td><td></td><td></td></tr>
+    {{#each records}}
+       <tr style="background-color:grey; color:black; font-size:0.8em; border-bottom:1px solid lightgrey;"><td class='viewLinks'data-id="{{this.id}}" style='cursor:pointer;'>View<td>{{this.title}}</td><td>{{this.n_actor}}</td><td>{{this.status}}</td><td>Message</td><td class='remove'data-id="{{this.id}}" style='cursor:pointer;'>Remove</td></tr>
+   {{/each}}
+  </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.0.2.min.js"> </script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+
+$(".viewLinks").click(function(){
+  console.log(this.dataset.id);
+});
+$(".remove").click(function(){
+  console.log(this.dataset.id);
+});
+</script>
+
+  {{else}}
+  <center><h1>You are not allowed on this page, Please login as an admin</h1></center>
+{{/ if}}
