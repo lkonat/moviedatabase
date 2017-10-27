@@ -24,20 +24,19 @@ app.use( function( req, res, next){
  });
 app.use(require('body-parser').urlencoded({extended:true}));
 //app.use(require('cookie-parser')(credentials.cookieSecret));
-/*
-app.use(require('express-session')({
- resave:false,
- saveUninitialized:false,
- secret:credentials.cookieSecret
-}));
-*/
-
+//app.use(require('express-session')({
+ //resave:false,
+ //saveUninitialized:false,
+// secret:credentials.cookieSecret
+//}));
 //app.get("/", function(req,res){
 //    res.render("home");
 //});
 // Root Dir
 app.get('/', function(req, res) {
-  res.render('landing');
+  res.render('landing', {
+    menu: [{"page": "home", "label": "Home"}, {"page": "about", "label": "About"}]
+  });
 });
 app.get('/admin_page', function(req, res) {
         res.render('admin_page');
