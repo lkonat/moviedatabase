@@ -1,0 +1,942 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'jwt' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.5
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData jwt
+8 silly fetchNamedPackageData jwt
+9 silly mapToRegistry name jwt
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'jwt',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'jwt',
+12 silly mapToRegistry   name: 'jwt',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/jwt
+14 verbose request uri https://registry.npmjs.org/jwt
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 9:52:11 AM
+17 verbose request id 867b46adb9599939
+18 verbose etag W/"59f7b0a8-1496"
+19 verbose lastModified Mon, 30 Oct 2017 23:07:20 GMT
+20 http request GET https://registry.npmjs.org/jwt
+21 http 304 https://registry.npmjs.org/jwt
+22 verbose headers { date: 'Thu, 02 Nov 2017 13:52:10 GMT',
+22 verbose headers   via: '1.1 varnish',
+22 verbose headers   'cache-control': 'max-age=300',
+22 verbose headers   etag: 'W/"59f7b0a8-1496"',
+22 verbose headers   age: '0',
+22 verbose headers   connection: 'keep-alive',
+22 verbose headers   'x-served-by': 'cache-dca17727-DCA',
+22 verbose headers   'x-cache': 'MISS',
+22 verbose headers   'x-cache-hits': '0',
+22 verbose headers   'x-timer': 'S1509630731.502368,VS0,VE7',
+22 verbose headers   vary: 'Accept-Encoding, Accept' }
+23 silly get cb [ 304,
+23 silly get   { date: 'Thu, 02 Nov 2017 13:52:10 GMT',
+23 silly get     via: '1.1 varnish',
+23 silly get     'cache-control': 'max-age=300',
+23 silly get     etag: 'W/"59f7b0a8-1496"',
+23 silly get     age: '0',
+23 silly get     connection: 'keep-alive',
+23 silly get     'x-served-by': 'cache-dca17727-DCA',
+23 silly get     'x-cache': 'MISS',
+23 silly get     'x-cache-hits': '0',
+23 silly get     'x-timer': 'S1509630731.502368,VS0,VE7',
+23 silly get     vary: 'Accept-Encoding, Accept' } ]
+24 verbose etag https://registry.npmjs.org/jwt from cache
+25 verbose get saving jwt to C:\Users\Matt\AppData\Roaming\npm-cache\registry.npmjs.org\jwt\.cache.json
+26 verbose correctMkdir C:\Users\Matt\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+27 silly install normalizeTree
+28 silly loadCurrentTree Finishing
+29 silly loadIdealTree Starting
+30 silly install loadIdealTree
+31 silly cloneCurrentTree Starting
+32 silly install cloneCurrentTreeToIdealTree
+33 silly cloneCurrentTree Finishing
+34 silly loadShrinkwrap Starting
+35 silly install loadShrinkwrap
+36 silly loadShrinkwrap Finishing
+37 silly loadAllDepsIntoIdealTree Starting
+38 silly install loadAllDepsIntoIdealTree
+39 silly resolveWithNewModule jwt@0.2.0 checking installable status
+40 silly cache add args [ 'jwt', null ]
+41 verbose cache add spec jwt
+42 silly cache add parsed spec Result {
+42 silly cache add   raw: 'jwt',
+42 silly cache add   scope: null,
+42 silly cache add   escapedName: 'jwt',
+42 silly cache add   name: 'jwt',
+42 silly cache add   rawSpec: '',
+42 silly cache add   spec: 'latest',
+42 silly cache add   type: 'tag' }
+43 silly addNamed jwt@latest
+44 verbose addNamed "latest" is being treated as a dist-tag for jwt
+45 info addNameTag [ 'jwt', 'latest' ]
+46 silly mapToRegistry name jwt
+47 silly mapToRegistry using default registry
+48 silly mapToRegistry registry https://registry.npmjs.org/
+49 silly mapToRegistry data Result {
+49 silly mapToRegistry   raw: 'jwt',
+49 silly mapToRegistry   scope: null,
+49 silly mapToRegistry   escapedName: 'jwt',
+49 silly mapToRegistry   name: 'jwt',
+49 silly mapToRegistry   rawSpec: '',
+49 silly mapToRegistry   spec: 'latest',
+49 silly mapToRegistry   type: 'tag' }
+50 silly mapToRegistry uri https://registry.npmjs.org/jwt
+51 verbose addNameTag registry:https://registry.npmjs.org/jwt not in flight; fetching
+52 verbose get https://registry.npmjs.org/jwt not expired, no request
+53 silly addNameTag next cb for jwt with tag latest
+54 silly addNamed jwt@0.2.0
+55 verbose addNamed "0.2.0" is a plain semver version for jwt
+56 silly cache afterAdd jwt@0.2.0
+57 verbose afterAdd C:\Users\Matt\AppData\Roaming\npm-cache\jwt\0.2.0\package\package.json not in flight; writing
+58 verbose correctMkdir C:\Users\Matt\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+59 verbose afterAdd C:\Users\Matt\AppData\Roaming\npm-cache\jwt\0.2.0\package\package.json written
+60 silly fetchNamedPackageData node-base64
+61 silly mapToRegistry name node-base64
+62 silly mapToRegistry using default registry
+63 silly mapToRegistry registry https://registry.npmjs.org/
+64 silly mapToRegistry data Result {
+64 silly mapToRegistry   raw: 'node-base64',
+64 silly mapToRegistry   scope: null,
+64 silly mapToRegistry   escapedName: 'node-base64',
+64 silly mapToRegistry   name: 'node-base64',
+64 silly mapToRegistry   rawSpec: '',
+64 silly mapToRegistry   spec: 'latest',
+64 silly mapToRegistry   type: 'tag' }
+65 silly mapToRegistry uri https://registry.npmjs.org/node-base64
+66 verbose request uri https://registry.npmjs.org/node-base64
+67 verbose request no auth needed
+68 info attempt registry request try #1 at 9:52:12 AM
+69 verbose etag W/"4da8b857-40a"
+70 verbose lastModified Fri, 15 Apr 2011 21:27:51 GMT
+71 http request GET https://registry.npmjs.org/node-base64
+72 http 304 https://registry.npmjs.org/node-base64
+73 verbose headers { date: 'Thu, 02 Nov 2017 13:52:10 GMT',
+73 verbose headers   via: '1.1 varnish',
+73 verbose headers   'cache-control': 'max-age=300',
+73 verbose headers   etag: 'W/"4da8b857-40a"',
+73 verbose headers   age: '0',
+73 verbose headers   connection: 'keep-alive',
+73 verbose headers   'x-served-by': 'cache-dca17727-DCA',
+73 verbose headers   'x-cache': 'MISS',
+73 verbose headers   'x-cache-hits': '0',
+73 verbose headers   'x-timer': 'S1509630731.658891,VS0,VE28',
+73 verbose headers   vary: 'Accept-Encoding, Accept' }
+74 silly get cb [ 304,
+74 silly get   { date: 'Thu, 02 Nov 2017 13:52:10 GMT',
+74 silly get     via: '1.1 varnish',
+74 silly get     'cache-control': 'max-age=300',
+74 silly get     etag: 'W/"4da8b857-40a"',
+74 silly get     age: '0',
+74 silly get     connection: 'keep-alive',
+74 silly get     'x-served-by': 'cache-dca17727-DCA',
+74 silly get     'x-cache': 'MISS',
+74 silly get     'x-cache-hits': '0',
+74 silly get     'x-timer': 'S1509630731.658891,VS0,VE28',
+74 silly get     vary: 'Accept-Encoding, Accept' } ]
+75 verbose etag https://registry.npmjs.org/node-base64 from cache
+76 verbose get saving node-base64 to C:\Users\Matt\AppData\Roaming\npm-cache\registry.npmjs.org\node-base64\.cache.json
+77 verbose correctMkdir C:\Users\Matt\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+78 silly resolveWithNewModule node-base64@0.0.1 checking installable status
+79 silly cache add args [ 'node-base64@0.0.1', null ]
+80 verbose cache add spec node-base64@0.0.1
+81 silly cache add parsed spec Result {
+81 silly cache add   raw: 'node-base64@0.0.1',
+81 silly cache add   scope: null,
+81 silly cache add   escapedName: 'node-base64',
+81 silly cache add   name: 'node-base64',
+81 silly cache add   rawSpec: '0.0.1',
+81 silly cache add   spec: '0.0.1',
+81 silly cache add   type: 'version' }
+82 silly addNamed node-base64@0.0.1
+83 verbose addNamed "0.0.1" is a plain semver version for node-base64
+84 silly mapToRegistry name node-base64
+85 silly mapToRegistry using default registry
+86 silly mapToRegistry registry https://registry.npmjs.org/
+87 silly mapToRegistry data Result {
+87 silly mapToRegistry   raw: 'node-base64',
+87 silly mapToRegistry   scope: null,
+87 silly mapToRegistry   escapedName: 'node-base64',
+87 silly mapToRegistry   name: 'node-base64',
+87 silly mapToRegistry   rawSpec: '',
+87 silly mapToRegistry   spec: 'latest',
+87 silly mapToRegistry   type: 'tag' }
+88 silly mapToRegistry uri https://registry.npmjs.org/node-base64
+89 verbose addNameVersion registry:https://registry.npmjs.org/node-base64 not in flight; fetching
+90 verbose get https://registry.npmjs.org/node-base64 not expired, no request
+91 silly cache afterAdd node-base64@0.0.1
+92 verbose afterAdd C:\Users\Matt\AppData\Roaming\npm-cache\node-base64\0.0.1\package\package.json not in flight; writing
+93 verbose correctMkdir C:\Users\Matt\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+94 verbose afterAdd C:\Users\Matt\AppData\Roaming\npm-cache\node-base64\0.0.1\package\package.json written
+95 silly fetchNamedPackageData nodemailer
+96 silly mapToRegistry name nodemailer
+97 silly mapToRegistry using default registry
+98 silly mapToRegistry registry https://registry.npmjs.org/
+99 silly mapToRegistry data Result {
+99 silly mapToRegistry   raw: 'nodemailer',
+99 silly mapToRegistry   scope: null,
+99 silly mapToRegistry   escapedName: 'nodemailer',
+99 silly mapToRegistry   name: 'nodemailer',
+99 silly mapToRegistry   rawSpec: '',
+99 silly mapToRegistry   spec: 'latest',
+99 silly mapToRegistry   type: 'tag' }
+100 silly mapToRegistry uri https://registry.npmjs.org/nodemailer
+101 verbose request uri https://registry.npmjs.org/nodemailer
+102 verbose request no auth needed
+103 info attempt registry request try #1 at 9:52:12 AM
+104 verbose etag W/"59fae2ba-44587"
+105 verbose lastModified Thu, 02 Nov 2017 09:17:46 GMT
+106 http request GET https://registry.npmjs.org/nodemailer
+107 http 304 https://registry.npmjs.org/nodemailer
+108 verbose headers { date: 'Thu, 02 Nov 2017 13:52:10 GMT',
+108 verbose headers   via: '1.1 varnish',
+108 verbose headers   'cache-control': 'max-age=300',
+108 verbose headers   etag: 'W/"59fae2ba-44587"',
+108 verbose headers   age: '188',
+108 verbose headers   connection: 'keep-alive',
+108 verbose headers   'x-served-by': 'cache-dca17727-DCA',
+108 verbose headers   'x-cache': 'HIT',
+108 verbose headers   'x-cache-hits': '35',
+108 verbose headers   'x-timer': 'S1509630731.838218,VS0,VE0',
+108 verbose headers   vary: 'Accept-Encoding, Accept' }
+109 silly get cb [ 304,
+109 silly get   { date: 'Thu, 02 Nov 2017 13:52:10 GMT',
+109 silly get     via: '1.1 varnish',
+109 silly get     'cache-control': 'max-age=300',
+109 silly get     etag: 'W/"59fae2ba-44587"',
+109 silly get     age: '188',
+109 silly get     connection: 'keep-alive',
+109 silly get     'x-served-by': 'cache-dca17727-DCA',
+109 silly get     'x-cache': 'HIT',
+109 silly get     'x-cache-hits': '35',
+109 silly get     'x-timer': 'S1509630731.838218,VS0,VE0',
+109 silly get     vary: 'Accept-Encoding, Accept' } ]
+110 verbose etag https://registry.npmjs.org/nodemailer from cache
+111 verbose get saving nodemailer to C:\Users\Matt\AppData\Roaming\npm-cache\registry.npmjs.org\nodemailer\.cache.json
+112 verbose correctMkdir C:\Users\Matt\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+113 silly resolveWithNewModule nodemailer@4.3.1 checking installable status
+114 silly cache add args [ 'nodemailer@>= 0.1.15', null ]
+115 verbose cache add spec nodemailer@>= 0.1.15
+116 silly cache add parsed spec Result {
+116 silly cache add   raw: 'nodemailer@>= 0.1.15',
+116 silly cache add   scope: null,
+116 silly cache add   escapedName: 'nodemailer',
+116 silly cache add   name: 'nodemailer',
+116 silly cache add   rawSpec: '>= 0.1.15',
+116 silly cache add   spec: '>=0.1.15',
+116 silly cache add   type: 'range' }
+117 silly addNamed nodemailer@>=0.1.15
+118 verbose addNamed ">=0.1.15" is a valid semver range for nodemailer
+119 silly addNameRange { name: 'nodemailer', range: '>=0.1.15', hasData: false }
+120 silly mapToRegistry name nodemailer
+121 silly mapToRegistry using default registry
+122 silly mapToRegistry registry https://registry.npmjs.org/
+123 silly mapToRegistry data Result {
+123 silly mapToRegistry   raw: 'nodemailer',
+123 silly mapToRegistry   scope: null,
+123 silly mapToRegistry   escapedName: 'nodemailer',
+123 silly mapToRegistry   name: 'nodemailer',
+123 silly mapToRegistry   rawSpec: '',
+123 silly mapToRegistry   spec: 'latest',
+123 silly mapToRegistry   type: 'tag' }
+124 silly mapToRegistry uri https://registry.npmjs.org/nodemailer
+125 verbose addNameRange registry:https://registry.npmjs.org/nodemailer not in flight; fetching
+126 verbose get https://registry.npmjs.org/nodemailer not expired, no request
+127 silly addNameRange number 2 { name: 'nodemailer', range: '>=0.1.15', hasData: true }
+128 silly addNameRange versions [ 'nodemailer',
+128 silly addNameRange   [ '0.1.1',
+128 silly addNameRange     '0.1.2',
+128 silly addNameRange     '0.1.3',
+128 silly addNameRange     '0.1.4',
+128 silly addNameRange     '0.1.5',
+128 silly addNameRange     '0.1.6',
+128 silly addNameRange     '0.1.7',
+128 silly addNameRange     '0.1.8',
+128 silly addNameRange     '0.1.9',
+128 silly addNameRange     '0.1.10',
+128 silly addNameRange     '0.1.11',
+128 silly addNameRange     '0.1.12',
+128 silly addNameRange     '0.1.13',
+128 silly addNameRange     '0.1.14',
+128 silly addNameRange     '0.1.15',
+128 silly addNameRange     '0.1.16',
+128 silly addNameRange     '0.1.17',
+128 silly addNameRange     '0.1.18',
+128 silly addNameRange     '0.1.19',
+128 silly addNameRange     '0.1.20',
+128 silly addNameRange     '0.1.21',
+128 silly addNameRange     '0.1.22',
+128 silly addNameRange     '0.1.23',
+128 silly addNameRange     '0.1.24',
+128 silly addNameRange     '0.2.0',
+128 silly addNameRange     '0.2.1',
+128 silly addNameRange     '0.2.2',
+128 silly addNameRange     '0.2.3',
+128 silly addNameRange     '0.2.4',
+128 silly addNameRange     '0.3.0',
+128 silly addNameRange     '0.3.1',
+128 silly addNameRange     '0.3.2',
+128 silly addNameRange     '0.3.3',
+128 silly addNameRange     '0.3.4',
+128 silly addNameRange     '0.3.5',
+128 silly addNameRange     '0.3.6',
+128 silly addNameRange     '0.3.7',
+128 silly addNameRange     '0.3.8',
+128 silly addNameRange     '0.3.9',
+128 silly addNameRange     '0.3.10',
+128 silly addNameRange     '0.3.11',
+128 silly addNameRange     '0.3.12',
+128 silly addNameRange     '0.3.13',
+128 silly addNameRange     '0.3.14',
+128 silly addNameRange     '0.3.15',
+128 silly addNameRange     '0.3.16',
+128 silly addNameRange     '0.3.17',
+128 silly addNameRange     '0.3.18',
+128 silly addNameRange     '0.3.19',
+128 silly addNameRange     '0.3.20',
+128 silly addNameRange     '0.3.21',
+128 silly addNameRange     '0.3.22',
+128 silly addNameRange     '0.3.23',
+128 silly addNameRange     '0.3.24',
+128 silly addNameRange     '0.3.25',
+128 silly addNameRange     '0.3.26',
+128 silly addNameRange     '0.3.27',
+128 silly addNameRange     '0.3.28',
+128 silly addNameRange     '0.3.29',
+128 silly addNameRange     '0.3.30',
+128 silly addNameRange     '0.3.31',
+128 silly addNameRange     '0.3.32',
+128 silly addNameRange     '0.3.33',
+128 silly addNameRange     '0.3.34',
+128 silly addNameRange     '0.3.35',
+128 silly addNameRange     '0.3.37',
+128 silly addNameRange     '0.3.38',
+128 silly addNameRange     '0.3.39',
+128 silly addNameRange     '0.3.40',
+128 silly addNameRange     '0.3.41',
+128 silly addNameRange     '0.3.42',
+128 silly addNameRange     '0.3.43',
+128 silly addNameRange     '0.3.44',
+128 silly addNameRange     '0.4.0',
+128 silly addNameRange     '0.4.1',
+128 silly addNameRange     '0.4.2',
+128 silly addNameRange     '0.4.3',
+128 silly addNameRange     '0.4.4',
+128 silly addNameRange     '0.5.0',
+128 silly addNameRange     '0.5.1',
+128 silly addNameRange     '0.5.2',
+128 silly addNameRange     '0.5.3',
+128 silly addNameRange     '0.5.4',
+128 silly addNameRange     '0.5.5',
+128 silly addNameRange     '0.5.6',
+128 silly addNameRange     '0.5.7',
+128 silly addNameRange     '0.5.8',
+128 silly addNameRange     '0.5.9',
+128 silly addNameRange     '0.5.10',
+128 silly addNameRange     '0.5.11',
+128 silly addNameRange     '0.5.12',
+128 silly addNameRange     '0.5.13',
+128 silly addNameRange     '0.5.14',
+128 silly addNameRange     '0.5.15',
+128 silly addNameRange     '0.6.0',
+128 silly addNameRange     '0.6.1',
+128 silly addNameRange     '0.6.2',
+128 silly addNameRange     '0.6.3',
+128 silly addNameRange     '0.6.4',
+128 silly addNameRange     '0.6.5',
+128 silly addNameRange     ... 96 more items ] ]
+129 silly addNamed nodemailer@4.3.1
+130 verbose addNamed "4.3.1" is a plain semver version for nodemailer
+131 silly cache afterAdd nodemailer@4.3.1
+132 verbose afterAdd C:\Users\Matt\AppData\Roaming\npm-cache\nodemailer\4.3.1\package\package.json not in flight; writing
+133 verbose correctMkdir C:\Users\Matt\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+134 verbose afterAdd C:\Users\Matt\AppData\Roaming\npm-cache\nodemailer\4.3.1\package\package.json written
+135 silly loadAllDepsIntoIdealTree Finishing
+136 silly loadIdealTree Finishing
+137 silly currentTree moviedatabase@1.0.0
+137 silly currentTree +-- @types/express-serve-static-core@4.0.53
+137 silly currentTree +-- @types/express@4.0.37
+137 silly currentTree +-- @types/mime@2.0.0
+137 silly currentTree +-- @types/node@8.0.30
+137 silly currentTree +-- @types/serve-static@1.7.32
+137 silly currentTree +-- accepts@1.3.4
+137 silly currentTree +-- align-text@0.1.4
+137 silly currentTree +-- amdefine@1.0.1
+137 silly currentTree +-- array-flatten@1.1.1
+137 silly currentTree +-- asap@2.0.6
+137 silly currentTree +-- assertion-error@1.0.2
+137 silly currentTree +-- async@1.5.2
+137 silly currentTree +-- balanced-match@1.0.0
+137 silly currentTree +-- bignumber.js@4.0.2
+137 silly currentTree +-- body-parser@1.18.1
+137 silly currentTree | `-- qs@6.5.1
+137 silly currentTree +-- brace-expansion@1.1.8
+137 silly currentTree +-- browser-stdout@1.3.0
+137 silly currentTree +-- bytes@3.0.0
+137 silly currentTree +-- camelcase@1.2.1
+137 silly currentTree +-- center-align@0.1.3
+137 silly currentTree +-- chai@4.1.2
+137 silly currentTree +-- check-error@1.0.2
+137 silly currentTree +-- cliui@2.1.0
+137 silly currentTree | `-- wordwrap@0.0.2
+137 silly currentTree +-- commander@2.9.0
+137 silly currentTree +-- concat-map@0.0.1
+137 silly currentTree +-- content-disposition@0.5.2
+137 silly currentTree +-- content-type@1.0.4
+137 silly currentTree +-- cookie-parser@1.4.3
+137 silly currentTree +-- cookie-signature@1.0.6
+137 silly currentTree +-- cookie@0.3.1
+137 silly currentTree +-- core-util-is@1.0.2
+137 silly currentTree +-- crc@3.4.4
+137 silly currentTree +-- debug@2.6.8
+137 silly currentTree +-- decamelize@1.2.0
+137 silly currentTree +-- deep-eql@3.0.1
+137 silly currentTree +-- define-properties@1.1.2
+137 silly currentTree +-- depd@1.1.1
+137 silly currentTree +-- destroy@1.0.4
+137 silly currentTree +-- diff@3.2.0
+137 silly currentTree +-- ee-first@1.1.1
+137 silly currentTree +-- encodeurl@1.0.1
+137 silly currentTree +-- escape-html@1.0.3
+137 silly currentTree +-- escape-string-regexp@1.0.5
+137 silly currentTree +-- etag@1.8.0
+137 silly currentTree +-- express-handlebars@3.0.0
+137 silly currentTree +-- express-session@1.15.5
+137 silly currentTree +-- express-validator@4.2.1
+137 silly currentTree +-- express@4.15.4
+137 silly currentTree +-- finalhandler@1.0.4
+137 silly currentTree +-- foreach@2.0.5
+137 silly currentTree +-- formidable@1.1.1
+137 silly currentTree +-- forwarded@0.1.1
+137 silly currentTree +-- fresh@0.5.0
+137 silly currentTree +-- fs.realpath@1.0.0
+137 silly currentTree +-- function-bind@1.1.1
+137 silly currentTree +-- get-func-name@2.0.0
+137 silly currentTree +-- glob@6.0.4
+137 silly currentTree +-- graceful-fs@4.1.11
+137 silly currentTree +-- graceful-readlink@1.0.1
+137 silly currentTree +-- growl@1.9.2
+137 silly currentTree +-- handlebars@4.0.10
+137 silly currentTree +-- has-flag@1.0.0
+137 silly currentTree +-- he@1.1.1
+137 silly currentTree +-- http-errors@1.6.2
+137 silly currentTree +-- iconv-lite@0.4.19
+137 silly currentTree +-- inflight@1.0.6
+137 silly currentTree +-- inherits@2.0.3
+137 silly currentTree +-- ipaddr.js@1.4.0
+137 silly currentTree +-- is-buffer@1.1.5
+137 silly currentTree +-- isarray@1.0.0
+137 silly currentTree +-- json3@3.3.2
+137 silly currentTree +-- kind-of@3.2.2
+137 silly currentTree +-- lazy-cache@1.0.4
+137 silly currentTree +-- ldapjs
+137 silly currentTree +-- lodash._baseassign@3.2.0
+137 silly currentTree +-- lodash._basecopy@3.0.1
+137 silly currentTree +-- lodash._basecreate@3.0.3
+137 silly currentTree +-- lodash._getnative@3.9.1
+137 silly currentTree +-- lodash._isiterateecall@3.0.9
+137 silly currentTree +-- lodash.create@3.1.1
+137 silly currentTree +-- lodash.isarguments@3.1.0
+137 silly currentTree +-- lodash.isarray@3.0.4
+137 silly currentTree +-- lodash.keys@3.1.2
+137 silly currentTree +-- lodash@4.17.4
+137 silly currentTree +-- longest@1.0.1
+137 silly currentTree +-- media-typer@0.3.0
+137 silly currentTree +-- merge-descriptors@1.0.1
+137 silly currentTree +-- methods@1.1.2
+137 silly currentTree +-- mime-db@1.30.0
+137 silly currentTree +-- mime-types@2.1.17
+137 silly currentTree +-- mime@1.3.4
+137 silly currentTree +-- minimatch@3.0.4
+137 silly currentTree +-- minimist@0.0.10
+137 silly currentTree +-- mkdirp@0.5.1
+137 silly currentTree | `-- minimist@0.0.8
+137 silly currentTree +-- mocha@3.5.3
+137 silly currentTree | `-- glob@7.1.1
+137 silly currentTree +-- ms@2.0.0
+137 silly currentTree +-- mysql@2.14.1
+137 silly currentTree +-- negotiator@0.6.1
+137 silly currentTree +-- node-mailer@0.1.1
+137 silly currentTree +-- nodemailer-express-handlebars@2.0.0
+137 silly currentTree +-- npm-debug.log
+137 silly currentTree +-- object-keys@1.0.11
+137 silly currentTree +-- object.assign@4.0.4
+137 silly currentTree +-- on-finished@2.3.0
+137 silly currentTree +-- on-headers@1.0.1
+137 silly currentTree +-- once@1.4.0
+137 silly currentTree +-- optimist@0.6.1
+137 silly currentTree +-- parseurl@1.3.2
+137 silly currentTree +-- path-is-absolute@1.0.1
+137 silly currentTree +-- path-to-regexp@0.1.7
+137 silly currentTree +-- pathval@1.1.0
+137 silly currentTree +-- postman@0.2.0
+137 silly currentTree +-- process-nextick-args@1.0.7
+137 silly currentTree +-- promise@7.3.1
+137 silly currentTree +-- proxy-addr@1.1.5
+137 silly currentTree +-- qs@6.5.0
+137 silly currentTree +-- random-bytes@1.0.0
+137 silly currentTree +-- range-parser@1.2.0
+137 silly currentTree +-- raw-body@2.3.2
+137 silly currentTree +-- readable-stream@2.3.3
+137 silly currentTree +-- repeat-string@1.6.1
+137 silly currentTree +-- right-align@0.1.3
+137 silly currentTree +-- safe-buffer@5.1.1
+137 silly currentTree +-- send@0.15.4
+137 silly currentTree +-- serve-static@1.12.4
+137 silly currentTree +-- setprototypeof@1.0.3
+137 silly currentTree +-- source-map@0.4.4
+137 silly currentTree +-- sqlstring@2.2.0
+137 silly currentTree +-- statuses@1.3.1
+137 silly currentTree +-- string_decoder@1.0.3
+137 silly currentTree +-- supports-color@3.1.2
+137 silly currentTree +-- type-detect@4.0.3
+137 silly currentTree +-- type-is@1.6.15
+137 silly currentTree +-- uglify-js@2.8.29
+137 silly currentTree | `-- source-map@0.5.7
+137 silly currentTree +-- uglify-to-browserify@1.0.2
+137 silly currentTree +-- uid-safe@2.1.5
+137 silly currentTree +-- unpipe@1.0.0
+137 silly currentTree +-- util-deprecate@1.0.2
+137 silly currentTree +-- utils-merge@1.0.0
+137 silly currentTree +-- validator@8.2.0
+137 silly currentTree +-- vary@1.1.1
+137 silly currentTree +-- window-size@0.1.0
+137 silly currentTree +-- wordwrap@0.0.3
+137 silly currentTree +-- wrappy@1.0.2
+137 silly currentTree `-- yargs@3.10.0
+138 silly idealTree moviedatabase@1.0.0
+138 silly idealTree +-- @types/express-serve-static-core@4.0.53
+138 silly idealTree +-- @types/express@4.0.37
+138 silly idealTree +-- @types/mime@2.0.0
+138 silly idealTree +-- @types/node@8.0.30
+138 silly idealTree +-- @types/serve-static@1.7.32
+138 silly idealTree +-- accepts@1.3.4
+138 silly idealTree +-- align-text@0.1.4
+138 silly idealTree +-- amdefine@1.0.1
+138 silly idealTree +-- array-flatten@1.1.1
+138 silly idealTree +-- asap@2.0.6
+138 silly idealTree +-- assertion-error@1.0.2
+138 silly idealTree +-- async@1.5.2
+138 silly idealTree +-- balanced-match@1.0.0
+138 silly idealTree +-- bignumber.js@4.0.2
+138 silly idealTree +-- body-parser@1.18.1
+138 silly idealTree | `-- qs@6.5.1
+138 silly idealTree +-- brace-expansion@1.1.8
+138 silly idealTree +-- browser-stdout@1.3.0
+138 silly idealTree +-- bytes@3.0.0
+138 silly idealTree +-- camelcase@1.2.1
+138 silly idealTree +-- center-align@0.1.3
+138 silly idealTree +-- chai@4.1.2
+138 silly idealTree +-- check-error@1.0.2
+138 silly idealTree +-- cliui@2.1.0
+138 silly idealTree | `-- wordwrap@0.0.2
+138 silly idealTree +-- commander@2.9.0
+138 silly idealTree +-- concat-map@0.0.1
+138 silly idealTree +-- content-disposition@0.5.2
+138 silly idealTree +-- content-type@1.0.4
+138 silly idealTree +-- cookie-parser@1.4.3
+138 silly idealTree +-- cookie-signature@1.0.6
+138 silly idealTree +-- cookie@0.3.1
+138 silly idealTree +-- core-util-is@1.0.2
+138 silly idealTree +-- crc@3.4.4
+138 silly idealTree +-- debug@2.6.8
+138 silly idealTree +-- decamelize@1.2.0
+138 silly idealTree +-- deep-eql@3.0.1
+138 silly idealTree +-- define-properties@1.1.2
+138 silly idealTree +-- depd@1.1.1
+138 silly idealTree +-- destroy@1.0.4
+138 silly idealTree +-- diff@3.2.0
+138 silly idealTree +-- ee-first@1.1.1
+138 silly idealTree +-- encodeurl@1.0.1
+138 silly idealTree +-- escape-html@1.0.3
+138 silly idealTree +-- escape-string-regexp@1.0.5
+138 silly idealTree +-- etag@1.8.0
+138 silly idealTree +-- express-handlebars@3.0.0
+138 silly idealTree +-- express-session@1.15.5
+138 silly idealTree +-- express-validator@4.2.1
+138 silly idealTree +-- express@4.15.4
+138 silly idealTree +-- finalhandler@1.0.4
+138 silly idealTree +-- foreach@2.0.5
+138 silly idealTree +-- formidable@1.1.1
+138 silly idealTree +-- forwarded@0.1.1
+138 silly idealTree +-- fresh@0.5.0
+138 silly idealTree +-- fs.realpath@1.0.0
+138 silly idealTree +-- function-bind@1.1.1
+138 silly idealTree +-- get-func-name@2.0.0
+138 silly idealTree +-- glob@6.0.4
+138 silly idealTree +-- graceful-fs@4.1.11
+138 silly idealTree +-- graceful-readlink@1.0.1
+138 silly idealTree +-- growl@1.9.2
+138 silly idealTree +-- handlebars@4.0.10
+138 silly idealTree +-- has-flag@1.0.0
+138 silly idealTree +-- he@1.1.1
+138 silly idealTree +-- http-errors@1.6.2
+138 silly idealTree +-- iconv-lite@0.4.19
+138 silly idealTree +-- inflight@1.0.6
+138 silly idealTree +-- inherits@2.0.3
+138 silly idealTree +-- ipaddr.js@1.4.0
+138 silly idealTree +-- is-buffer@1.1.5
+138 silly idealTree +-- isarray@1.0.0
+138 silly idealTree +-- json3@3.3.2
+138 silly idealTree +-- jwt@0.2.0
+138 silly idealTree +-- kind-of@3.2.2
+138 silly idealTree +-- lazy-cache@1.0.4
+138 silly idealTree +-- ldapjs
+138 silly idealTree +-- lodash._baseassign@3.2.0
+138 silly idealTree +-- lodash._basecopy@3.0.1
+138 silly idealTree +-- lodash._basecreate@3.0.3
+138 silly idealTree +-- lodash._getnative@3.9.1
+138 silly idealTree +-- lodash._isiterateecall@3.0.9
+138 silly idealTree +-- lodash.create@3.1.1
+138 silly idealTree +-- lodash.isarguments@3.1.0
+138 silly idealTree +-- lodash.isarray@3.0.4
+138 silly idealTree +-- lodash.keys@3.1.2
+138 silly idealTree +-- lodash@4.17.4
+138 silly idealTree +-- longest@1.0.1
+138 silly idealTree +-- media-typer@0.3.0
+138 silly idealTree +-- merge-descriptors@1.0.1
+138 silly idealTree +-- methods@1.1.2
+138 silly idealTree +-- mime-db@1.30.0
+138 silly idealTree +-- mime-types@2.1.17
+138 silly idealTree +-- mime@1.3.4
+138 silly idealTree +-- minimatch@3.0.4
+138 silly idealTree +-- minimist@0.0.10
+138 silly idealTree +-- mkdirp@0.5.1
+138 silly idealTree | `-- minimist@0.0.8
+138 silly idealTree +-- mocha@3.5.3
+138 silly idealTree | `-- glob@7.1.1
+138 silly idealTree +-- ms@2.0.0
+138 silly idealTree +-- mysql@2.14.1
+138 silly idealTree +-- negotiator@0.6.1
+138 silly idealTree +-- node-base64@0.0.1
+138 silly idealTree +-- node-mailer@0.1.1
+138 silly idealTree +-- nodemailer-express-handlebars@2.0.0
+138 silly idealTree +-- nodemailer@4.3.1
+138 silly idealTree +-- npm-debug.log
+138 silly idealTree +-- object-keys@1.0.11
+138 silly idealTree +-- object.assign@4.0.4
+138 silly idealTree +-- on-finished@2.3.0
+138 silly idealTree +-- on-headers@1.0.1
+138 silly idealTree +-- once@1.4.0
+138 silly idealTree +-- optimist@0.6.1
+138 silly idealTree +-- parseurl@1.3.2
+138 silly idealTree +-- path-is-absolute@1.0.1
+138 silly idealTree +-- path-to-regexp@0.1.7
+138 silly idealTree +-- pathval@1.1.0
+138 silly idealTree +-- postman@0.2.0
+138 silly idealTree +-- process-nextick-args@1.0.7
+138 silly idealTree +-- promise@7.3.1
+138 silly idealTree +-- proxy-addr@1.1.5
+138 silly idealTree +-- qs@6.5.0
+138 silly idealTree +-- random-bytes@1.0.0
+138 silly idealTree +-- range-parser@1.2.0
+138 silly idealTree +-- raw-body@2.3.2
+138 silly idealTree +-- readable-stream@2.3.3
+138 silly idealTree +-- repeat-string@1.6.1
+138 silly idealTree +-- right-align@0.1.3
+138 silly idealTree +-- safe-buffer@5.1.1
+138 silly idealTree +-- send@0.15.4
+138 silly idealTree +-- serve-static@1.12.4
+138 silly idealTree +-- setprototypeof@1.0.3
+138 silly idealTree +-- source-map@0.4.4
+138 silly idealTree +-- sqlstring@2.2.0
+138 silly idealTree +-- statuses@1.3.1
+138 silly idealTree +-- string_decoder@1.0.3
+138 silly idealTree +-- supports-color@3.1.2
+138 silly idealTree +-- type-detect@4.0.3
+138 silly idealTree +-- type-is@1.6.15
+138 silly idealTree +-- uglify-js@2.8.29
+138 silly idealTree | `-- source-map@0.5.7
+138 silly idealTree +-- uglify-to-browserify@1.0.2
+138 silly idealTree +-- uid-safe@2.1.5
+138 silly idealTree +-- unpipe@1.0.0
+138 silly idealTree +-- util-deprecate@1.0.2
+138 silly idealTree +-- utils-merge@1.0.0
+138 silly idealTree +-- validator@8.2.0
+138 silly idealTree +-- vary@1.1.1
+138 silly idealTree +-- window-size@0.1.0
+138 silly idealTree +-- wordwrap@0.0.3
+138 silly idealTree +-- wrappy@1.0.2
+138 silly idealTree `-- yargs@3.10.0
+139 silly generateActionsToTake Starting
+140 silly install generateActionsToTake
+141 silly generateActionsToTake Finishing
+142 silly diffTrees action count 3
+143 silly diffTrees add node-base64@0.0.1
+144 silly diffTrees add jwt@0.2.0
+145 silly diffTrees add nodemailer@4.3.1
+146 silly decomposeActions action count 24
+147 silly decomposeActions fetch node-base64@0.0.1
+148 silly decomposeActions extract node-base64@0.0.1
+149 silly decomposeActions test node-base64@0.0.1
+150 silly decomposeActions preinstall node-base64@0.0.1
+151 silly decomposeActions build node-base64@0.0.1
+152 silly decomposeActions install node-base64@0.0.1
+153 silly decomposeActions postinstall node-base64@0.0.1
+154 silly decomposeActions finalize node-base64@0.0.1
+155 silly decomposeActions fetch jwt@0.2.0
+156 silly decomposeActions extract jwt@0.2.0
+157 silly decomposeActions test jwt@0.2.0
+158 silly decomposeActions preinstall jwt@0.2.0
+159 silly decomposeActions build jwt@0.2.0
+160 silly decomposeActions install jwt@0.2.0
+161 silly decomposeActions postinstall jwt@0.2.0
+162 silly decomposeActions finalize jwt@0.2.0
+163 silly decomposeActions fetch nodemailer@4.3.1
+164 silly decomposeActions extract nodemailer@4.3.1
+165 silly decomposeActions test nodemailer@4.3.1
+166 silly decomposeActions preinstall nodemailer@4.3.1
+167 silly decomposeActions build nodemailer@4.3.1
+168 silly decomposeActions install nodemailer@4.3.1
+169 silly decomposeActions postinstall nodemailer@4.3.1
+170 silly decomposeActions finalize nodemailer@4.3.1
+171 silly runTopLevelLifecycles Starting
+172 silly executeActions Starting
+173 silly install executeActions
+174 silly doSerial global-install 0
+175 silly doParallel fetch 3
+176 verbose correctMkdir C:\Users\Matt\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+177 verbose lock using C:\Users\Matt\AppData\Roaming\npm-cache\_locks\staging-6dd2748ce3fb6647.lock for C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging
+178 silly doParallel extract 3
+179 silly extract node-base64@0.0.1
+180 silly extract jwt@0.2.0
+181 silly extract nodemailer@4.3.1
+182 verbose unbuild node_modules\.staging\node-base64-9ee72409
+183 verbose unbuild node_modules\.staging\jwt-6dc3355a
+184 verbose unbuild node_modules\.staging\nodemailer-bd935467
+185 silly gentlyRm C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\node-base64-9ee72409 is being purged from base C:\Users\Matt\Desktop\moviedatabase
+186 verbose gentlyRm don't care about contents; nuking C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\node-base64-9ee72409
+187 silly gentlyRm C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\jwt-6dc3355a is being purged from base C:\Users\Matt\Desktop\moviedatabase
+188 verbose gentlyRm don't care about contents; nuking C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\jwt-6dc3355a
+189 verbose tar unpack C:\Users\Matt\AppData\Roaming\npm-cache\node-base64\0.0.1\package.tgz
+190 verbose tar unpacking to C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\node-base64-9ee72409
+191 silly gentlyRm C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\node-base64-9ee72409 is being purged
+192 verbose gentlyRm don't care about contents; nuking C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\node-base64-9ee72409
+193 verbose tar unpack C:\Users\Matt\AppData\Roaming\npm-cache\jwt\0.2.0\package.tgz
+194 verbose tar unpacking to C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\jwt-6dc3355a
+195 silly gentlyRm C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\jwt-6dc3355a is being purged
+196 verbose gentlyRm don't care about contents; nuking C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\jwt-6dc3355a
+197 silly gunzTarPerm modes [ '777', '666' ]
+198 silly gentlyRm C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\nodemailer-bd935467 is being purged from base C:\Users\Matt\Desktop\moviedatabase
+199 verbose gentlyRm don't care about contents; nuking C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\nodemailer-bd935467
+200 silly gunzTarPerm modes [ '777', '666' ]
+201 verbose tar unpack C:\Users\Matt\AppData\Roaming\npm-cache\nodemailer\4.3.1\package.tgz
+202 verbose tar unpacking to C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\nodemailer-bd935467
+203 silly gentlyRm C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\nodemailer-bd935467 is being purged
+204 verbose gentlyRm don't care about contents; nuking C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\nodemailer-bd935467
+205 silly gunzTarPerm modes [ '777', '666' ]
+206 silly gunzTarPerm extractEntry
+207 silly gunzTarPerm modified mode [ '', 493, 511 ]
+208 silly gunzTarPerm extractEntry .npmignore
+209 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+210 silly gunzTarPerm extractEntry package.json
+211 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+212 silly gunzTarPerm extractEntry .gitignore
+213 silly gunzTarPerm modified mode [ '.gitignore', 420, 438 ]
+214 silly gunzTarPerm extractEntry base64.cc
+215 silly gunzTarPerm modified mode [ 'base64.cc', 420, 438 ]
+216 silly gunzTarPerm extractEntry install.sh
+217 silly gunzTarPerm modified mode [ 'install.sh', 493, 511 ]
+218 silly gunzTarPerm extractEntry lib/
+219 silly gunzTarPerm modified mode [ 'lib/', 493, 511 ]
+220 silly gunzTarPerm extractEntry lib/jwt.js
+221 silly gunzTarPerm modified mode [ 'lib/jwt.js', 420, 438 ]
+222 silly gunzTarPerm extractEntry CHANGELOG.md
+223 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 420, 438 ]
+224 silly gunzTarPerm extractEntry LICENSE
+225 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+226 silly gunzTarPerm extractEntry js_base64_for_comparsion.js
+227 silly gunzTarPerm modified mode [ 'js_base64_for_comparsion.js', 420, 438 ]
+228 silly gunzTarPerm extractEntry makefile
+229 silly gunzTarPerm modified mode [ 'makefile', 420, 438 ]
+230 silly gunzTarPerm extractEntry package.json
+231 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+232 silly gunzTarPerm extractEntry README.md
+233 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+234 silly gunzTarPerm extractEntry package-lock.json.2512357107
+235 silly gunzTarPerm modified mode [ 'package-lock.json.2512357107', 420, 438 ]
+236 silly gunzTarPerm extractEntry README.md
+237 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+238 silly gunzTarPerm extractEntry lib/addressparser/index.js
+239 silly gunzTarPerm modified mode [ 'lib/addressparser/index.js', 420, 438 ]
+240 silly gunzTarPerm extractEntry package.json
+241 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+242 silly gunzTarPerm extractEntry README.md
+243 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+244 silly gunzTarPerm extractEntry lib/base64/index.js
+245 silly gunzTarPerm modified mode [ 'lib/base64/index.js', 420, 438 ]
+246 silly gunzTarPerm extractEntry lib/dkim/index.js
+247 silly gunzTarPerm modified mode [ 'lib/dkim/index.js', 420, 438 ]
+248 silly gunzTarPerm extractEntry lib/dkim/message-parser.js
+249 silly gunzTarPerm modified mode [ 'lib/dkim/message-parser.js', 420, 438 ]
+250 silly gunzTarPerm extractEntry test.js
+251 silly gunzTarPerm modified mode [ 'test.js', 420, 438 ]
+252 silly gunzTarPerm extractEntry test.php
+253 silly gunzTarPerm modified mode [ 'test.php', 420, 438 ]
+254 silly gunzTarPerm extractEntry wscript
+255 silly gunzTarPerm modified mode [ 'wscript', 493, 511 ]
+256 silly gunzTarPerm extractEntry lib/dkim/relaxed-body.js
+257 silly gunzTarPerm modified mode [ 'lib/dkim/relaxed-body.js', 420, 438 ]
+258 silly gunzTarPerm extractEntry lib/dkim/sign.js
+259 silly gunzTarPerm modified mode [ 'lib/dkim/sign.js', 420, 438 ]
+260 silly gunzTarPerm extractEntry lib/fetch/cookies.js
+261 silly gunzTarPerm modified mode [ 'lib/fetch/cookies.js', 420, 438 ]
+262 silly gunzTarPerm extractEntry lib/fetch/index.js
+263 silly gunzTarPerm modified mode [ 'lib/fetch/index.js', 420, 438 ]
+264 silly gunzTarPerm extractEntry lib/json-transport/index.js
+265 silly gunzTarPerm modified mode [ 'lib/json-transport/index.js', 420, 438 ]
+266 silly gunzTarPerm extractEntry lib/mail-composer/index.js
+267 silly gunzTarPerm modified mode [ 'lib/mail-composer/index.js', 420, 438 ]
+268 silly gunzTarPerm extractEntry lib/mailer/index.js
+269 silly gunzTarPerm modified mode [ 'lib/mailer/index.js', 420, 438 ]
+270 silly gunzTarPerm extractEntry lib/mailer/mail-message.js
+271 silly gunzTarPerm modified mode [ 'lib/mailer/mail-message.js', 420, 438 ]
+272 silly gunzTarPerm extractEntry lib/mime-funcs/index.js
+273 silly gunzTarPerm modified mode [ 'lib/mime-funcs/index.js', 420, 438 ]
+274 silly gunzTarPerm extractEntry lib/mime-funcs/mime-types.js
+275 silly gunzTarPerm modified mode [ 'lib/mime-funcs/mime-types.js', 420, 438 ]
+276 silly gunzTarPerm extractEntry lib/mime-node/index.js
+277 silly gunzTarPerm modified mode [ 'lib/mime-node/index.js', 420, 438 ]
+278 silly gunzTarPerm extractEntry lib/mime-node/last-newline.js
+279 silly gunzTarPerm modified mode [ 'lib/mime-node/last-newline.js', 420, 438 ]
+280 silly gunzTarPerm extractEntry lib/nodemailer.js
+281 silly gunzTarPerm modified mode [ 'lib/nodemailer.js', 420, 438 ]
+282 silly gunzTarPerm extractEntry lib/qp/index.js
+283 silly gunzTarPerm modified mode [ 'lib/qp/index.js', 420, 438 ]
+284 silly gunzTarPerm extractEntry lib/sendmail-transport/index.js
+285 silly gunzTarPerm modified mode [ 'lib/sendmail-transport/index.js', 420, 438 ]
+286 silly gunzTarPerm extractEntry lib/sendmail-transport/le-unix.js
+287 silly gunzTarPerm modified mode [ 'lib/sendmail-transport/le-unix.js', 420, 438 ]
+288 silly gunzTarPerm extractEntry lib/sendmail-transport/le-windows.js
+289 silly gunzTarPerm modified mode [ 'lib/sendmail-transport/le-windows.js', 420, 438 ]
+290 silly gunzTarPerm extractEntry lib/ses-transport/index.js
+291 silly gunzTarPerm modified mode [ 'lib/ses-transport/index.js', 420, 438 ]
+292 silly gunzTarPerm extractEntry lib/shared/index.js
+293 silly gunzTarPerm modified mode [ 'lib/shared/index.js', 420, 438 ]
+294 silly gunzTarPerm extractEntry lib/smtp-connection/data-stream.js
+295 silly gunzTarPerm modified mode [ 'lib/smtp-connection/data-stream.js', 420, 438 ]
+296 silly gunzTarPerm extractEntry lib/smtp-connection/http-proxy-client.js
+297 silly gunzTarPerm modified mode [ 'lib/smtp-connection/http-proxy-client.js', 420, 438 ]
+298 silly gunzTarPerm extractEntry lib/smtp-connection/index.js
+299 silly gunzTarPerm modified mode [ 'lib/smtp-connection/index.js', 420, 438 ]
+300 silly gunzTarPerm extractEntry lib/smtp-pool/index.js
+301 silly gunzTarPerm modified mode [ 'lib/smtp-pool/index.js', 420, 438 ]
+302 silly gunzTarPerm extractEntry lib/smtp-pool/pool-resource.js
+303 silly gunzTarPerm modified mode [ 'lib/smtp-pool/pool-resource.js', 420, 438 ]
+304 silly gunzTarPerm extractEntry lib/smtp-transport/index.js
+305 silly gunzTarPerm modified mode [ 'lib/smtp-transport/index.js', 420, 438 ]
+306 silly gunzTarPerm extractEntry lib/stream-transport/index.js
+307 silly gunzTarPerm modified mode [ 'lib/stream-transport/index.js', 420, 438 ]
+308 silly gunzTarPerm extractEntry lib/well-known/index.js
+309 silly gunzTarPerm modified mode [ 'lib/well-known/index.js', 420, 438 ]
+310 silly gunzTarPerm extractEntry lib/well-known/services.json
+311 silly gunzTarPerm modified mode [ 'lib/well-known/services.json', 420, 438 ]
+312 silly gunzTarPerm extractEntry lib/xoauth2/index.js
+313 silly gunzTarPerm modified mode [ 'lib/xoauth2/index.js', 420, 438 ]
+314 silly gentlyRm C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\jwt-6dc3355a\node_modules is being purged
+315 verbose gentlyRm don't care about contents; nuking C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\jwt-6dc3355a\node_modules
+316 silly gentlyRm C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\node-base64-9ee72409\node_modules is being purged
+317 verbose gentlyRm don't care about contents; nuking C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\node-base64-9ee72409\node_modules
+318 silly gentlyRm C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\nodemailer-bd935467\node_modules is being purged
+319 verbose gentlyRm don't care about contents; nuking C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\nodemailer-bd935467\node_modules
+320 silly doParallel preinstall 3
+321 silly preinstall node-base64@0.0.1 C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\node-base64-9ee72409
+322 info lifecycle node-base64@0.0.1~preinstall: node-base64@0.0.1
+323 silly preinstall jwt@0.2.0 C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\jwt-6dc3355a
+324 info lifecycle jwt@0.2.0~preinstall: jwt@0.2.0
+325 silly preinstall nodemailer@4.3.1 C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\nodemailer-bd935467
+326 info lifecycle nodemailer@4.3.1~preinstall: nodemailer@4.3.1
+327 silly lifecycle node-base64@0.0.1~preinstall: no script for preinstall, continuing
+328 silly lifecycle jwt@0.2.0~preinstall: no script for preinstall, continuing
+329 silly lifecycle nodemailer@4.3.1~preinstall: no script for preinstall, continuing
+330 silly doReverseSerial remove 0
+331 silly doSerial move 0
+332 silly doSerial finalize 3
+333 silly finalize C:\Users\Matt\Desktop\moviedatabase\node_modules\node-base64
+334 silly finalize C:\Users\Matt\Desktop\moviedatabase\node_modules\jwt
+335 silly finalize C:\Users\Matt\Desktop\moviedatabase\node_modules\nodemailer
+336 silly doSerial build 3
+337 silly build node-base64@0.0.1
+338 info linkStuff node-base64@0.0.1
+339 silly linkStuff node-base64@0.0.1 has C:\Users\Matt\Desktop\moviedatabase\node_modules as its parent node_modules
+340 verbose linkBins node-base64@0.0.1
+341 verbose linkMans node-base64@0.0.1
+342 silly build jwt@0.2.0
+343 info linkStuff jwt@0.2.0
+344 silly linkStuff jwt@0.2.0 has C:\Users\Matt\Desktop\moviedatabase\node_modules as its parent node_modules
+345 verbose linkBins jwt@0.2.0
+346 verbose linkMans jwt@0.2.0
+347 silly build nodemailer@4.3.1
+348 info linkStuff nodemailer@4.3.1
+349 silly linkStuff nodemailer@4.3.1 has C:\Users\Matt\Desktop\moviedatabase\node_modules as its parent node_modules
+350 verbose linkBins nodemailer@4.3.1
+351 verbose linkMans nodemailer@4.3.1
+352 silly doSerial global-link 0
+353 silly doParallel update-linked 0
+354 silly doSerial install 3
+355 silly install node-base64@0.0.1 C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging\node-base64-9ee72409
+356 info lifecycle node-base64@0.0.1~install: node-base64@0.0.1
+357 verbose lifecycle node-base64@0.0.1~install: unsafe-perm in lifecycle true
+358 verbose lifecycle node-base64@0.0.1~install: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\Matt\Desktop\moviedatabase\node_modules\node-base64\node_modules\.bin;C:\Users\Matt\Desktop\moviedatabase\node_modules\.bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Users\Matt\AppData\Local\atom\bin;C:\Users\Matt\AppData\Local\Microsoft\WindowsApps;C:\Users\Matt\AppData\Local\GitHubDesktop\bin;C:\Users\Matt\AppData\Roaming\npm
+359 verbose lifecycle node-base64@0.0.1~install: CWD: C:\Users\Matt\Desktop\moviedatabase\node_modules\node-base64
+360 silly lifecycle node-base64@0.0.1~install: Args: [ '/d /s /c', './install.sh' ]
+361 silly lifecycle node-base64@0.0.1~install: Returned: code: 1  signal: null
+362 info lifecycle node-base64@0.0.1~install: Failed to exec install script
+363 verbose unlock done using C:\Users\Matt\AppData\Roaming\npm-cache\_locks\staging-6dd2748ce3fb6647.lock for C:\Users\Matt\Desktop\moviedatabase\node_modules\.staging
+364 silly rollbackFailedOptional Starting
+365 silly rollbackFailedOptional Finishing
+366 silly runTopLevelLifecycles Finishing
+367 silly install printInstalled
+368 warn enoent ENOENT: no such file or directory, open 'C:\Users\Matt\Desktop\moviedatabase\node_modules\ldapjs\package.json'
+369 verbose enoent ENOENT: no such file or directory, open 'C:\Users\Matt\Desktop\moviedatabase\node_modules\ldapjs\package.json'
+369 verbose enoent This is most likely not a problem with npm itself
+369 verbose enoent and is related to npm not being able to find a file.
+370 warn moviedatabase@1.0.0 No description
+371 verbose If you need help, you may report this error at:
+371 verbose     <https://github.com/npm/npm/issues>
+372 warn moviedatabase@1.0.0 No repository field.
+373 verbose If you need help, you may report this error at:
+373 verbose     <https://github.com/npm/npm/issues>
+374 verbose stack Error: node-base64@0.0.1 install: `./install.sh`
+374 verbose stack Exit status 1
+374 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:255:16)
+374 verbose stack     at emitTwo (events.js:106:13)
+374 verbose stack     at EventEmitter.emit (events.js:191:7)
+374 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:40:14)
+374 verbose stack     at emitTwo (events.js:106:13)
+374 verbose stack     at ChildProcess.emit (events.js:191:7)
+374 verbose stack     at maybeClose (internal/child_process.js:920:16)
+374 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
+375 verbose pkgid node-base64@0.0.1
+376 verbose cwd C:\Users\Matt\Desktop\moviedatabase
+377 error Windows_NT 10.0.15063
+378 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "jwt"
+379 error node v6.11.5
+380 error npm  v3.10.10
+381 error code ELIFECYCLE
+382 error node-base64@0.0.1 install: `./install.sh`
+382 error Exit status 1
+383 error Failed at the node-base64@0.0.1 install script './install.sh'.
+383 error Make sure you have the latest version of node.js and npm installed.
+383 error If you do, this is most likely a problem with the node-base64 package,
+383 error not with npm itself.
+383 error Tell the author that this fails on your system:
+383 error     ./install.sh
+383 error You can get information on how to open an issue for this project with:
+383 error     npm bugs node-base64
+383 error Or if that isn't available, you can get their info via:
+383 error     npm owner ls node-base64
+383 error There is likely additional logging output above.
+384 verbose exit [ 1, true ]
