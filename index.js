@@ -7,6 +7,24 @@ var fs = require('fs');
 var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:"main"});
 var mysql = require('mysql');
+var hbs = require('nodemailer-express-handlebars');
+  email = process.env.MAILER_EMAIL_ID || 'auth_email_address@pointpark.edu',
+  pass = process.env.MAILER_PASSWORD || 'auth_email_pass'
+  nodemailer = require('nodemailer');
+var smtpTransport = nodemailer.createTransport({
+  serice: process.env.MAILER_SERVICE_PROVIDER || 'PointPark',
+  auth: {
+    user: email,
+    pass: pass
+  }
+});
+var handlebarsOptions = {
+  viewEngine: 'handlebars',
+  viewPath: path.resolve('.views/'),
+  extName: '.html'
+};
+smtpTransport.use('compile', hbs(handlebarsOptions));
+
 var connection = mysql.createConnection({
         host: 'fkonat.it.pointpark.edu',
         user: 'lunamista',
@@ -59,7 +77,6 @@ app.post('/process-search', function(req, res) {
 	});
 });
 
-
 app.get("/history", function(req,res){
   if(req.session.admin_id){
   }else {
@@ -70,9 +87,7 @@ app.get("/history", function(req,res){
 app.get("/creatnewaccount", function(req,res){
   res.render("addUser");
 });
-app.get("/forgotpassword", function(req,res){
-  res.render("forgotpassword");
-});
+
 app.get("/search", function(req,res){
   res.render("search");
 });
