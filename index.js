@@ -43,7 +43,8 @@ function connect(cb){
 
 function getMenu(req){
   var menu =[];
-  var isAdmin = false;
+  var isLoggedIn = req.session.user_id ? true : false;
+  var isAdmin = req.session.is_admin ? true : false;
   if(isAdmin){
     menu.push({"page": "search", "label": "Search For Actors"});
   } else{
@@ -56,16 +57,14 @@ function getMenu(req){
 // Root Dir. Displays to USER on Page Load w/ Nav-Bar
 app.get('/', function(req, res) {
   res.render('landing', {
-  menu: getMenu(req)
+    menu: getMenu(req)
   });
 });
 
-app.get('/', function(req, res) {
-  res.render('home');
-});
-
 app.get('/about', function(req, res) {
-  res.render('about');
+  res.render("about", {
+    menu: getMenu(req)
+  });
 });
 
 app.get('/admin_page', function(req, res) {
