@@ -48,6 +48,17 @@ function connect(cb){
   });
 }
 
+//app.use(express.static(__dirname));
+//app.use(require('sesame')()); // for sessions
+
+//var forgot = require('../../')({
+//    uri : '/resetpassword',
+//    from : 'mdalexa@pointpark.edu',
+//    host : '/forgot', port : 4000,
+//});
+
+//app.use(forgot.middleware);
+
 function getMenu(req){
   var menu =[];
   var isAdmin = req.session.is_admin;
@@ -100,11 +111,18 @@ app.get('/error-page', function(req, res) {
   res.render('error-page');
 });
 
-app.get("/forgotpassword", function(req,res){
-  res.render("forgotpassword", {
+app.get("/forgot", function(req,res){
+  res.render("forgot", {
     menu: getMenu(req)
   });
 });
+
+app.get("/resetpassword", function(req,res) {
+  res.render("resetpassword.html", {
+    menu: getMenu(req)
+  });
+});
+
 app.get("/search", function(req,res){
   if(req.session.is_admin){
     res.render("search",{
@@ -232,6 +250,52 @@ app.post('/delete-in-database', function(req, res){
    }
 });
 
+function addEmailToMailchimp(email) {
+var request = require("request");
+
+var options = { method: 'POST',
+  url: 'https://us17.api.mailchimp.com/3.0/lists/dbf2982ae5/members',
+  headers: 
+   { 'postman-token': '37f93e37-299e-fc96-5e70-384f255e06ea',
+     'cache-control': 'no-cache',
+     authorization: 'Basic YW55c3RyaW5nOjY3ZGQ1ZjVkOGM2MzkzMTFhOTUyZjI3YWIxZjBkMjI3LXVzMTc=',
+     'content-type': 'application/json' },
+  body: { email_address: email,
+	 status: 'subscribed' },
+  json: true };
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+}
+
+app.post('/forgotpassword', function (req, res) {
+  
+  var reset = forgot(email, function (err) {
+      if (err) res.end('Error sending message: ' + err)
+      else res.end('Check your inbox for a password reset message.')
+  });
+    
+  reset.on('request', function (req_, res_) {
+      addEmailToMailchimp(req.body.email);
+      fs.createReadStream(__dirname + '/forgot.handlebars').pipe(res_);
+  });
+});
+
+app.post('/resetpassword', function (req, res) {
+  if (!req.session.reset) return res.end('reset token not set');
+    
+  var password = req.body.password;
+  var confirm = req.body.confirm;
+  if (password !== confirm) return res.end('passwords do not match');
+    
+  // update the user db here    
+
+  forgot.expire(req.session.reset.id);
+  delete req.session.reset;
+  res.end('password reset');
+});
 
 app.post('/process-search', function(req, res) {
   var search = req.body.search;

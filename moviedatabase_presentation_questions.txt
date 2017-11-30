@@ -1,0 +1,20 @@
+MOVIEDATABASE Presentation Questions
+
+Options - for Measurements
+Please update file if Measurements have changed
+Send email to update profile periodically
+Measurements – Inches (US)
+Text/Email – Response to Bucket Search. Yes/No response.
+Add fields whether text/email is sent
+Whether text/email is responded
+Whether text/email response is yes/no
+Query Search/Bucket Search – (profiles deleted), try to keep same search group within a group.
+WebPage naming customizable, About page customizable.
+Type Cast Productions -  New Name
+Edit buttons – give choices – add ability to add edit selections
+Multiple edit choices (i.e. sports – basketball, soccer)
+Nudity – Yes/No, Union Status – SAG/AFTRA
+
+
+December 14 – Meeting with Marty Schiff
+
