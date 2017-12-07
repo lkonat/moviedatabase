@@ -434,7 +434,7 @@ function getImages(){
                 var x = $("<div class='image_edit_btn' data-imagename='"+data.success[j].id+"' style='color:red; position:absolute; top:0px; left:90%; cursor:pointer; display:none; '>X</div>");
                 $("#profile_image"+j).append(x);
              }
-             $(".image_edit_btn").click(function(e){ // when clik on delete  or add button
+             $(".image_edit_btn").click(function(e){ // when click on delete  or add button
                e.stopPropagation();
                if(this.dataset.index){//add a photo
                  if($("#image_upload_panel").length>0){
@@ -442,7 +442,11 @@ function getImages(){
                  }
                  var panel =$("<div id='image_upload_panel' style='border:1px solid lightgrey; width:300px; height: 200px; position:absolute; background-color:lightgrey; color:black;'></div>");
                  var close_btn =$("<button type='button' class='close' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
-                 var photo_field =$("<div class='form-group'><form id='upload_image_form' enctype='multipart/form-data' action='upload_image' method='POST'><label for='fieldPhoto' class ='col-form-label'>Upload Photo</label><div class='col-md-12' ><input type='file' class ='form-control' required accept='image/*'' id ='fieldPhoto' name='photo' ></div><br><br><button type='submit'>Upload</button></form></div>");
+                 var photo_field =$("<div class='form-group'><form id='upload_image_form' enctype='multipart/form-data' action='upload_image' method='POST'><label for='fieldPhoto' class ='col-form-label'>Upload Photo</label><div class='col-md-12' ><input type='file' class ='form-control' required accept='image/*'' id ='fieldPhoto' name='photo' ></div><br><br>");
+                 // for (var i = 0; i < array.length; i++) {
+                 //   var photo_field =$("<div class='form-group'><form id='upload_image_form' enctype='multipart/form-data' action='upload_image' method='POST'><label for='fieldPhoto' class ='col-form-label'>Upload Photo</label><div class='col-md-12' ><input type='file' class ='form-control' required accept='image/*'' id ='fieldPhoto' name='photo' ></div><br><br>");
+                 // }
+                 //photo_field+$("<button type='submit'>Upload</button></form></div>");
                  panel.append(close_btn,photo_field);
                  $("#main_content").append(panel);
                  var width = panel.width(), height=panel.height();

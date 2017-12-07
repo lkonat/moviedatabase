@@ -1,35 +1,75 @@
-<div class="" style="width:400px;  min-height: 100%; min-height: 100vh; display: flex; align-items: center; margin:0 auto; ">
-
-
-<div class = 'container' style='width:100%;'>
-<form action="/login" method="post">
-<div class="form-group">
- <label for="email1">Email address</label>
- <input type="email" name ="email"class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Enter email">
-</div>
-<div class="form-group">
- <label for="password1">Password</label>
- <input type="password" name ="password" class="form-control" id="password1" placeholder="Password">
-</div>
-<a href="forgotpassword">Forgot password?</a><br><br>
-<button type="submit" class="btn btn-primary">Log In</button>
-</form> <br>
-<div class="form-row">
-</div>
-<br>
-</div>
-</div>
-<script src="https://code.jquery.com/jquery-2.0.2.min.js"> </script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<style>
+body {
+  background: url("img/cinema4.jpeg") center center fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+.b {
+ border: 1px solid black;
+ background: rgba(13,13,13,.0);
+ box-shadow: 0px 10px 50px black;
+}
+</style>
+<script src="https://code.jquery.com/jquery-2.0.2.min.js"></script>
 <script type="text/javascript">
-{{#if pass_email}}
-   $("#email1").css({"border":"1px solid red"});
-   {{else}}
-   $("#email1").css({"border":"1px solid black"});
-{{/if}}
-{{#if pass_password}}
-   $("#password1").css({"border":"1px solid red"});
-   {{else}}
-   $("#password1").css({"border":"1px solid black"});
-{{/if}}
+$(document).ready(function() {
+  $('#submit_btn').attr("disabled","disabled");
+  $('input').on('change', function() {
+    var email = $('#email1').val();
+    $('#login_message').html("");
+    if (email) {
+      $.ajax({
+        type: 'post',
+        url: '/validate_email',//forgot_pwd_reset
+        data: {
+        email:email,
+      },
+      success: function (response) {
+        $('#email_status').html(response);
+        if(response){
+          $('#login_message').html("<a href='/addUser'>**Click Here to Create Account**</a>");
+          return false;
+        }
+        else {
+          $('#submit_btn').removeAttr("disabled");
+          $('#submit_message').hide();
+          return true;
+        }
+      }
+    });
+    }else {
+      $('#email_status').html("");
+      return false;
+    }
+  })
+});
+
 </script>
+<body>
+  <center>
+    <br>
+  <div class="container b">
+    <form action="/login"  method="POST">
+      <div class="form-group col-md-4">
+        <label for="email1">Email address</label>
+        <input type="email" name ="email"class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Enter email">
+        <span class="" id="email_status" style='color:red; font-weight:bold;'></span> <br>
+        <span class="" id="login_message" style='color:blue; font-weight:bold;'></span>
+        <!--<span class="" id="submit_message" style='color:red; font-weight:bold;'><br><a href="addUser">**Click Here to Create Account**</a></span>-->
+      </div>
+      <div class="form-group col-md-4">
+       <label for="password1">Password</label>
+       <input type="password" name ="password" class="form-control" id="password1" placeholder="Password">
+      </div>
+      <a href="forgot">Forgot password?</a><br><br>
+
+      <div class="form-group col-md-4">
+        <input type="submit" class="btn primary" id="submit_btn" value="Login"> <br>
+      </div>
+  </form>
+  <br>
+  </div>
+</body>
