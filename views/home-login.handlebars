@@ -1,20 +1,42 @@
+<style>
+        body {
+                background: url("img/cinema3.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+              
+        }
+        .content {
+                padding-top: 5%;
+        }
+        .box {
+                border: 1px solid white;
+                background: rgba(13,13,13,.7);
+                color: white;
+                width: 600px;
+                height: 565px;
+                margin-top: 5%;
+        }
+        .c {
+                padding-top: 5%;
+        }
+</style>
 <div class="" style="width:400px;  min-height: 100%; min-height: 100vh; display: flex; align-items: center; margin:0 auto; ">
 
 
-<div class = 'container' style='width:100%;'>
-<form action="/login" method="post">
-<div class="form-group">
- <label for="email1">Email address</label>
- <input type="email" name ="email"class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Enter email">
+<div class = 'container box' style='width:100%;'>
+ <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 </div>
 <div class="form-group">
  <label for="password1">Password</label>
  <input type="password" name ="password" class="form-control" id="password1" placeholder="Password">
 </div>
-<a href="forgot">Forgot password?</a><br><br>
+<a href="forgotpassword">Forgot password?</a><br><br>
 <button type="submit" class="btn btn-primary">Log In</button>
 </form> <br>
 <div class="form-row">
+<div class="form-group col-md-6">
+   <a href="addUser">Create Account</a><br><br>
+</div>
 </div>
 <br>
 </div>

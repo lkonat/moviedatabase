@@ -1,0 +1,365 @@
+<style>
+body {
+  background: url("img/cinema4.jpeg") center center fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+body, html {
+        width: 100%;
+        height: 100%;
+        color: white;
+}
+.box {
+  border: 1px solid black;
+  width: 300px;
+  height: 330px;
+  padding: 5px;
+  margin: 10px;
+  float: left;
+  box-shadow: 0px 10px 50px black;
+  cursor: pointer;
+}
+.box:hover {
+    background: rgba(13,13,13,.5);
+}
+.ctn img {
+  background-size: cover;
+  width: 290px;
+  height: 250px;
+}
+.ctn input {
+  cursor: pointer;
+}
+.ctn {
+ height:800px;
+ border: 1px solid black;
+ background: rgba(13,13,13,.0);
+ color: white;
+ overflow-y:scroll;
+ box-shadow: 0px 10px 50px black;
+ padding-left: 5%;
+ padding-top: 20px;
+}
+#search_fields {
+  border: 1px solid black;
+  background: rgba(13,13,13,.0);
+  padding: 10px;
+  box-shadow: 0px 10px 50px black;
+  padding:20px;
+}
+.search  {
+        margin:10px;
+}
+
+.s input {
+  width: 350px!important;
+  margin-left: -20px;
+}
+.go {
+  margin-left: -30px;
+}
+.c {
+  padding: 20px;
+}
+button {
+  margin: 5px;
+}
+.mail_box {
+  padding: 20px;
+}
+.mail {
+  box-shadow: 0px 10px 50px black;
+}
+#loader {
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba(0, 0, 0, .8 )
+                url('img/loader3.gif')
+                50% 50%
+                no-repeat;
+}
+</style>
+<div id="loader"></div>
+  <div class="container-fluid" id="search_fields">
+    <form id="searchForm"  action="/search-actors" method="POST">
+      <div class="row">
+      <div class="col-6 left">
+      <div class="form-group row">
+        <label for="name" class="col-lg-2 col-form-label">Name</label>
+        <div class="col-lg-4">
+          <input type="text" class="form-control" id="name" name="fname" placeholder="First">
+        </div>
+        <div class="col-lg-4">
+          <input type="text" class="form-control" id="name" name="lname" placeholder="Last">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="age" class="col-lg-2 col-form-label">Age</label>
+        <div class="col-lg-2">
+          <input type="number" class="form-control" id="age" name="age_min" placeholder="Min">
+        </div>
+        <div class="col-lg-2">
+          <input type="number" class="form-control" id="age" name="age_max" placeholder="Max">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="weight" class="col-lg-2 col-form-label">Weight</label>
+        <div class="col-lg-2">
+          <input type="number" class="form-control" id="weight" name="weight_min" placeholder="Min">
+        </div>
+        <div class="col-lg-2">
+          <input type="number" class="form-control" id="weight" name="weight_max" placeholder="Max">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="height" class="col-lg-2 col-form-label">Height</label>
+        <div class="col-lg-2">
+          <input type="number" class="form-control" id="height" name="height_min" placeholder="Min">
+        </div>
+        <div class="col-lg-2">
+          <input type="number" class="form-control" id="height" name="height_max" placeholder="Max">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="shoe_size" class="col-lg-2 col-form-label">Shoe Size</label>
+        <div class="col-lg-2">
+          <input type="number" class="form-control" id="shoe_size" name="shoe_size_min" placeholder="Min">
+        </div>
+        <div class="col-lg-2">
+          <input type="number" class="form-control" id="shoe_size" name="shoe_size_max" placeholder="Max">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="city" class="col-lg-2 col-form-label">City</label>
+        <div class="col-lg-3">
+          <input type="text" class="form-control" id="city" name="city" placeholder="City">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="states" class="col-lg-2 col-form-label">State</label>
+        <div class="col-lg-3">
+                <select type="number" class="form-control" id="states" name="state">
+                        <option value="">SELECT</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="car_year" class="col-lg-2 col-form-label">Car Year</label>
+        <div class="col-lg-2">
+          <input type="number" class="form-control" id="car_year" name="car_year_min" placeholder="Min">
+        </div>
+        <div class="col-lg-2">
+          <input type="number" class="form-control" id="car_year" name="car_year_max" placeholder="Max">
+        </div>
+      </div>
+       </div>
+       <div class="col-6 right">
+         <div class="form-group row">
+           <label for="coat_size" class="col-lg-3 col-form-label">Coat Size</label>
+           <div class="col-lg-2">
+             <input type="number" class="form-control" id="coat_size" name="coat_size_min" placeholder="Min">
+           </div>
+           <div class="col-lg-2">
+             <input type="number" class="form-control" id="coat_size" name="coat_size_max" placeholder="Max">
+           </div>
+         </div>
+         <div class="form-group row">
+           <label for="dress_size" class="col-lg-3 col-form-label">Dress Size</label>
+           <div class="col-lg-2">
+             <input type="number" class="form-control" id="dress_size" name="dress_size_min" placeholder="Min">
+           </div>
+           <div class="col-lg-2">
+             <input type="number" class="form-control" id="dress_size" name="dress_size_max" placeholder="Max">
+           </div>
+         </div>
+         <div class="form-group row">
+           <label for="sex" class="col-lg-3 col-form-label">Sex</label>
+           <div class="col-lg-3">
+             <select type="number" class="form-control" id="sex" name="sex" placeholder="Min">
+               <option value="">SELECT</option>
+               <option value="female">FEMALE</option>
+               <option value="male">MALE</option>
+               <option value="other">OTHER</option>
+             </select>
+           </div>
+         </div>
+         <div class="form-group row">
+           <label for="us_citizen" class="col-lg-3 col-form-label">US Citizen</label>
+           <div class="col-lg-3">
+             <select type="number" class="form-control" id="us_citizen" name="us_citizen" placeholder="Min">
+               <option value="">SELECT</option>
+               <option value="yes">US Citizen</option>
+               <option value="no">Non-Citizen</option>
+             </select>
+           </div>
+         </div>
+      <div class="form-group row">
+        <label for="hair" class="col-lg-3 col-form-label">Hair Color</label>
+        <div class="col-lg-3">
+          <input type="text" class="form-control" id="hair" name="hair_color" placeholder="Hair Color">
+        </div>
+      </div>
+         <div class="form-group row">
+           <label for="ethnicity" class="col-lg-3 col-form-label">Ethnicity</label>
+           <div class="col-lg-3">
+             <select type="number" class="form-control" id="ethnicity" name="ethnicity" placeholder="Min">
+               <option value="">SELECT</option>
+               <option value="black">Black or African American</option>
+               <option value="white">White</option>
+               <option value="asian">Asian</option>
+               <option value="latino">Hispanic/Latino</option>
+               <option value="native">Native American</option>
+             </select>
+           </div>
+         </div>
+
+       </div>
+      </div>
+      <div class="row">
+      <div class="col d-flex justify-content-center">
+      <button type="submit" class="btn btn-outline-success">Search</button>
+      </div>
+    </div>
+    </form>
+  </div>
+
+<div class='row justify-content-center'>
+    <div class='col-12'>
+      <div class='ctn'></div>
+    </div>
+</div>
+
+<div class="row mail_box justify-content-end" id="mail_box">
+    <div class="col-lg-6">
+<form action="">
+  <div class="input-group mail">
+  <textarea class="form-control" id="Textarea" rows="6" placeholder="email"></textarea>
+  <span class="input-group-addon btn btn-primary">Send!</span>
+</div>
+</form>
+</div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-lg-2 bt">
+    <button id="save_search" class="btn btn-outline-secondary">Save Search</button>
+  </div>
+  <div class="col-lg-2 bt">
+        <button id="clear_search" class="btn btn-outline-danger">Clear Search</button>
+  </div>
+   <div class="col-lg-2 bt">
+        <button id="send_email" class="btn btn-outline-secondary">Send Emails</button>
+  </div>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+        $(document).ready(function(){
+        $("#loader").hide();
+        $(".ctn").hide();
+         $("#mail_box").hide();
+        $("#clear_search").hide();
+         $("#save_search").hide();
+         $("#send_email").hide();
+            $("#searchForm").on("submit", function(evt){
+                $("#search_fields").hide();
+                $(".ctn").show();
+                $("#clear_search").show();
+                $("#save_search").show();
+                $("#send_email").show();
+                console.log("submit form");
+                evt.preventDefault();
+                $.ajax({
+                        url: "/search-actors",
+                        type: "POST",
+                        beforeSend: function() { $("#loader").show(); },
+                        complete: function() { $("#loader").hide(); },
+                        data: $(this).serialize(),
+                        success: function(data){
+                        if (data.success) {
+                           console.log(data.success);
+                           var result = data.success;
+                        for(var i = 0; i<result.length; i++) {
+                                $(".ctn").append("<div class='box'>" + (!result[i].image ? "<img src='img/users.png'>" :"<img src='data:image/png;base64,"+result[i].image+"'>")+ "<h3>" +result[i].first_name +" "+ result[i].last_name +"</h3></div>");
+                                }
+                        } else {
+                            console.log("error");
+                        }
+                    },
+                    error: function(){
+                        console.log("There was a problem.");
+                    }
+                });
+                return false;
+            });
+        });
+$("#clear_search").on("click", function() {
+        location.reload();
+});
+                $("#send_email").on("click", function(){
+                $(".ctn").animate({height:'500'});
+                $("#mail_box").show();
+                $(this).hide();
+                });
+</script>
