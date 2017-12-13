@@ -13,7 +13,7 @@
     {{/if}}
     <style media="screen">
     body {
-      background: url("img/cinema4.jpeg");
+     /*background: url("img/cinema4.jpeg");*/
 
       background-position: center;
       background-repeat:no-repeat;
@@ -147,26 +147,51 @@
 	<script type="text/javascript">
 
 	$(document).ready(function(){
+       // $("body").css("background-image", "url('img/cinema3.jpg')");
                 $.ajax({
                         url: "/get_app_info",
                         type: "POST",
                         success: function(data){
                         if (data.success) {
-                           console.log(data.success);
+                        // console.log(data.success);
                            var result = data.success;
                            $("#project_name").html(result[0].app_name);
 			   $("#project_name2").html(result[0].app_name);
-                        } else {
-                            console.log("error");
-                        }
+                           $("#project_name3").html(result[0].app_name);
+			   $("#project_intro").html(result[0].app_intro);
+			   $("#project_about").html(result[0].app_about);
+			   $("body").css("background-image",'url("data:image/png;base64,' + result[0].photo + '" )');
+			//console.log(result[0].photo);
+                        	} else {
+                            	console.log("error");
+                        	}
                     },
                     error: function(){
                         console.log("There was a problem.");
                     }
                 });
-                return false;
-            });
+//	              $("#upload_font-image").on("submit", function(e) {
+//                        e.preventDefault();
+  //                      $.ajax({
+    //                         url: "/upload_font-image",
+      //                       type: "POST",
+        //                     data: $(this).serialize(),
+          //                   success: function(data){
+            //                   if (data.success) {
+              //                   var result = data.success;
+                //                 //console.log(result);
+                  //               $("body").css("background-image",'url("data:image/png;base64,' + result[0].photo + '" )');
+                    //           } else {
+                      //           console.log("error");
+                        //         }
+                          //   },
+                            //                 error: function(){
+                             //   console.log("There was a problem.");
+                            // }
+                           //});
+                     // });
 
+ 	});
 	</script>      
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>

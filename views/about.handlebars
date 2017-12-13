@@ -1,55 +1,32 @@
-<!doctype html>
-<html>
-  <head>
-    <title>About</title>
-  </head>
-  <body>
     <style>
-       
-       body, html {
-         width: 100%;
-         height: 100%;
-         color: white;
-       }
-       h1 {
-         font-family: 'Cinzel', serif;
-       }
-
-       h2 {
-         margin-left: 1em;
-       }
-
-
-       h3 {
-         margin-left: 1em;
-       }
-
-       p {
-         font-family: "Cinzel", serif;
-         font-color: white;
-         font-size: 20px;
-         margin-left: 1em;
-
-       a {
-         color: white;
-       }
+ .about {
+ 	height:700px;
+ 	border: 1px solid balck;
+ 	background: rgba(13,13,13,.6);
+	color: white;
+ 	overflow-y:scroll;
+ 	box-shadow: 0px 10px 50px black;
+ 	padding-left: 5%;
+ 	padding-top: 20px;	
+}
 
     </style>
+  <body>
 
-
-  <body style='background-color:black; color:white;'>
-
-     {{{body}}}
+   <!--  {{{body}}} -->
+        <div class="container about">
+                <div class="col-12 justify-content-center text-center">
+		    <h1>About <span id="project_name3"></span></h1>
+                </div>
+<br>
+                <div class="col-12 justify-content-center">
+                        <p class="lead" id="project_about"></p>
+                </div>
+        </div>
     <footer class="footer">
      <div class="container">
        <span class="text-muted">footer.</span>
      </div>
     </footer>
-
-
-    <h1><center> About LunaMista </center></h1>
-
-    <br>
-
   </body>
-</html>
+
