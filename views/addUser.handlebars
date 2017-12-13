@@ -1,6 +1,5 @@
 <style>
 body {
-  background: url("img/cinema4.jpeg") center center fixed;
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
@@ -9,8 +8,11 @@ body {
 }
 .b {
  border: 1px solid black;
- background: rgba(13,13,13,.0);
+ background: rgba(13,13,13,.6);
  box-shadow: 0px 10px 50px black;
+ width: 600px;
+ margin-top:2%;
+ padding-top:5px;
 }
 </style>
 <script src="https://code.jquery.com/jquery-2.0.2.min.js"></script>
@@ -101,39 +103,39 @@ function checkall() {
 }
 </script>
 <body>
-  <center><h3>Create Account</h3>
   <div class="container b">
+  <center><h3>Create Account</h3>
     <form action="/addUser"  method="POST">
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-6">
         <label for="first_name">First Name:</label>
         <input type="text" class="form-control" id="first_name" name="first_name">
       </div>
 
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-6">
         <label for="last_name">Last Name:</label>
         <input type="text" class="form-control" id="last_name" name="last_name">
       </div>
 
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-6">
         <label for="email">Email:</label>
         <input type="email" class="form-control" id="email" name="email" onchange="checkEmail();">
         <span class="" id="email_status" style='color:red; font-weight:bold;'></span>
       </div>
 
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-6">
         <label for="password">Password:</label>
         <input type="PASSWORD" class="form-control" id="password" name="password">
         <input type="checkbox" id="pwd_box" class=""> Show password
       </div>
 
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-6">
         <label for="sex">Gender: </label>
         <!--<input type="text" class="form-control" id="sex" name="sex">-->
 	<input type="radio" class="" name="sex" id="sex" value="male"> Male
 	<input type="radio" class="" name="sex" id="sex" value="female"> Female
       </div>
 
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-6">
         <input type="submit" class="btn primary" id="submit_btn">
         <span class="" id="submit_message" style='color:red; font-size:0.8em;'>**Complete All the Fields to Submit**</span>
       </div>

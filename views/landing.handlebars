@@ -1,5 +1,3 @@
-<!doctype html>
-<html>
  <head>
    <title>LunaMista</title>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -9,7 +7,7 @@
    <!-- <link rel="stylesheet" href="css/style.css"> -->
  <style>
   body {
-         background: url("img/cinema4.jpeg");
+        /* background: url("img/cinema4.jpeg");*/
          background-position: center;
          background-repeat:no-repeat;
          background-size: cover;
@@ -40,27 +38,35 @@
        color: white;
   }
   .jumbotron {
-       background: rgba(13,13,13,.5);
-       background: transparent;
+	background: rgba(13,13,13,.0);
+	background: transparant;
        padding-top: 10%;
        color: white;
   }
+.box {
+ border: 1px solid black;
+ background: rgba(13,13,13,.7);
+ box-shadow: 0px 10px 50px black;
+ padding-left: 5%;
+ padding-top: 25px;
+}
   </style>
   </head>
 
 <body>
-  <div class="row justify-content-center text-center ctn">
-    <div class="col-sm-12">
-      <div class="jumbotron jumbotron-fluid justify-content-center text-center">
-        <h1 class="display-2" id="project_name2"></h1>
-        <p class="lead t">Create Your Vision In Downtown Pittsburgh.</p>
-        <hr class="my-4">
-        <p class="lead">
-          <a class="btn btn-outline-info btn-lg" href="/addUser">Sign Up <i class="fa fa-user-plus" aria-hidden="true"></i></a>
-          <a class="btn btn-outline-secondary btn-lg" href="/home-login">Log In <i class="fa fa-user" aria-hidden="true"></i></a>
-        </p>
-      </div>
-    </div>
-  </div>
+ 	<div class="row justify-content-center text-center ctn">
+		<div class="col-sm-12">
+			<div class="jumbotron justify-content-center text-center">
+				<div class="box">
+        				<h1 class="display-2" id="project_name2"></h1>
+        				<p class="lead t" id="project_intro"></p>
+        				<hr class="my-4">
+        				<p class="lead">
+          				<a class="btn btn-outline-info btn-lg" href="/addUser">Sign Up <i class="fa fa-user-plus" aria-hidden="true"></i></a>
+          				<a class="btn btn-outline-secondary btn-lg" href="/home-login">Log In <i class="fa fa-user" aria-hidden="true"></i></a>
+        				</p>
+      				</div>
+			</div>
+		</div>
+	</div>
 </body>
-</html>

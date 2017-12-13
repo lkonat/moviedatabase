@@ -2,7 +2,7 @@
   <title>edit</title>
   <style>
   body {
-    background: url("img/cinema4.jpeg");
+   /* background: url("img/cinema4.jpeg");*/
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
@@ -15,7 +15,7 @@
     box-shadow: 0px 10px 50px black;
     cursor: pointer;
     overflow-y: scroll;
-    height: 500px;
+    height: 695px;
     margin-top: 2%;
     width: 600px;
   }
@@ -24,7 +24,7 @@
     width: 500px;
   }
   label {
-    font-size: 2em;
+    font-size: 1em;
   }
   h3 {
   color:black;
@@ -32,26 +32,62 @@
   </style>
 </head>
 <body>
-<div class="container">
+<div class="container ctn">
   <div class="row justify-content-center">
     <div class="box">
       <h3><i class="fa fa-cogs" aria-hidden="true"></i> Customize your App</h3>
       <hr>
-      <p>Personalize your app here.</p>
-      <form method="POST" action="/edit_page">
+	<form id="upload_font-image" enctype="multipart/form-data" action="/upload_font-image" method="POST">
+	  <label for="photo">Background Image</label>
+          <input type="file" name = "photo" class="form-control-file" require accept="image/*" id="photo">
+	<br>
+          <input type="submit" class="btn btn-success" value="Upload Image" id="photo_upload">
+	</form>
+      <form id="edit_elt" method="POST" action="/edit_page" role="form">
         <div class="form-group">
           <label for="name">Name your App</label>
-          <input type="text" name="name" class="form-control" placeholder="Name Me!" id="name">
+          <input type="text" name="app_name" class="form-control" placeholder="Name Me!" id="name">
         </div>
-        <!-- <div class="form-group">
-          <label for="font_pic">Choose Font Picture</label>
-          <input type="file" class="form-control-file" id="font_pic">
-        </div> -->
-          <button type="submit" class="btn btn-primary">Apply Changes</button>
+        <div class="form-group">
+          <label for="intro">Introduce your App</label>
+          <input type="text" name="app_intro" class="form-control" placeholder="Introduce Me!" id="intro">
+        </div>
+	  <div class="form-group">
+    <label for="aboutarea">About your App</label>
+    <textarea name = "app_about" class="form-control" id="aboutarea" placeholder="About your App." rows="3"></textarea>
+  </div> 
+     <!-- <div class="form-group">
+          <label for="photo">Choose Font Picture</label>
+          <input type="file" name = "photo" class="form-control-file" require accept="image/*" id="photo">
+        </div> --> 
+          <button type="submit" class="btn btn-primary" id="edit_btn">Apply Changes</button>
       </form>
     </div>
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script>
+$(document).ready(function() {
+	console.log("ready!");
+	document.getElementById("edit_btn").disabled = true;
+	var values = $("#edit_elt").val();
+	$("#edit_elt input").change(function() {
+		if (!values) {
+			document.getElementById("edit_btn").disabled = false;
+		} else {
+			document.getElementById("edit_btn").disabled = true;
+			}
+	});
+        document.getElementById("photo_upload").disabled = true;
+        var values = $("#upload_font-image").val();
+        $("#upload_font-image input").change(function() {
+                if (!values) {
+                        document.getElementById("photo_upload").disabled = false;
+                } else {
+                        document.getElementById("photo_upload").disabled = true;
+                        }
+        })
+});
+</script>
 </body>
 
