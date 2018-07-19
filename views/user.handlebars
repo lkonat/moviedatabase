@@ -7,9 +7,7 @@ body {
   -o-background-size: cover;
 }
 .b {
- border: 1px solid black;
- background: rgba(13,13,13,.6);
- box-shadow: 0px 10px 50px black;
+ color:black;
 }
 </style>
 {{#if login}}
@@ -62,7 +60,7 @@ body {
              {{# each actor_info}}
                 <tr>
                   <td class="user_info_titles">{{label}}</td>
-                  <td class="user_info_values" id='{{name}}'> {{value}}  </td>
+                  <td class="user_info_values" id='{{name}}'> {{value}}</td>
                   <td><small class='user_info_edit_links' data-name='{{name}}' data-label='{{label}}' data-value='{{value}}' data-table='actors'>&#x270E;</small></td>
                 </tr>
              {{/each}}
@@ -129,7 +127,7 @@ body {
 
                   </div>
                   <div  >
-                    <h3>Musicienship <small class='add-for-info-section' data-target="musicienship">+</small></h3>
+                    <h3>Musicianship <small class='add-for-info-section' data-target="musicienship">+</small></h3>
                     <div class="other_info_areas"  id='musicienship-area' style="width:100%; font-size:0.8em;">
 
                     </div>
@@ -168,7 +166,7 @@ body {
                console.log("success: ",data.success);
               for( key in data.success){
                 console.log(key, data.success[key]);
-                var box =$("<div class='available_users'  data-id ='"+data.success[key].id+"'style='width:400px; height:30px; cursor:pointer; font-size:0.8em;background-color:grey; color:white; margin-bottom:7px; border:2px solid grey; border-radius:10px;'>"+data.success[key].last_name+" "+data.success[key].first_name+"  "+(data.success[key].is_admin?"<span>&#x1f511;</span>":"")+""+(data.admin_id===data.success[key].id?"<span style='color: black; font-weight:bold; margin-left:7px;'>Me</span>":"")+"</div>");
+                var box =$("<div class='available_users'  data-id ='"+data.success[key].id+"'style='width:400px; height:30px; cursor:pointer; font-size:0.8em;background-color:grey; color:blacka; margin-bottom:7px; border:2px solid grey; border-radius:10px;'>"+data.success[key].last_name+" "+data.success[key].first_name+"  "+(data.success[key].is_admin?"<span>&#x1f511;</span>":"")+""+(data.admin_id===data.success[key].id?"<span style='color: black; font-weight:bold; margin-left:7px;'>Me</span>":"")+"</div>");
                 var image = $("<img src='img/user.png' style='height:90%; width:30px;' alt=''>");
                 var accept = $("<span style='color: black; float:right;  font-weight:bold; margin-left:7px;' data-id='"+data.success[key].id+"'>Accept</span>");
                 var denied = $("<span style='color: darkred;float:right; font-weight:bold; margin-left:7px;' data-id='"+data.success[key].id+"'>Denied</span>");
@@ -287,7 +285,7 @@ function becomeActor(){
          }else if (name_ ==="skills") {
             var input_div =$("<div class='form-group col-md-12'><label class='mr-sm-2' for='inputEdit'>New "+label+"</label><br><input type='text' class='form-control' id='inputEdit' "+(value_type?"data-type='"+value_type+"'":"")+" value='"+($("#skills"+table_id).html()?$("#skills"+table_id).html().trim():"")+"' name='skills[name]'><input type='hidden' name='table_name' value="+table_name+"><input type='hidden' name='skills[id]' value="+table_id+"></div>");
          }
-         else if (name_ ==="ethnicity" || name_ ==="height" || name_ ==="sex" || name_ ==="us_citizen" ) {
+         else if (name_ ==="ethnicity" || name_ ==="height" || name_ ==="sex" || name_ ==="us_citizen" || name_ ==="hair_color") {
              var input_div =$("<div class='form-group col-md-12'><label class='mr-sm-2' for='ethnicity_options'>New "+label+"</label><br><select class='custom-select mb-2 mr-sm-2 mb-sm-0' id='"+name_+"_options' name='"+name_+"'><option selected></option></select><input type='hidden' name='table_name' value="+table_name+"></div>");
 
          }
@@ -451,6 +449,7 @@ function becomeActor(){
                  ($("#height_options").length>0?utility.giveHeightToDropdown("height_options"):"");
                  ($("#sex_options").length>0?utility.giveGenderToDropdown("sex_options"):"");
                  ($("#us_citizen_options").length>0?utility.giveNoYesDropdown("us_citizen_options"):"");
+                 ($("#hair_color_options").length>0?utility.giveHairColorToDropdown("hair_color_options") :"");
 
 
   });
@@ -627,7 +626,8 @@ function getImages(){
               }
               if($(window).width()<1000){
                 carousel_itme = $("<div class='carousel-item "+(i==0?"active":"")+"' style='"+(this_data && data_image?"cursor:pointer;":"")+ "'></div>");
-                var img_carousel =$("<img class='d-block img-fluid' src='"+(this_data && data_image?(data_image):"")+"' style='width:200px; height:200px; position:relative; margin:0 auto;' alt='Picture "+i+"'>");
+                //var img_carousel =$("<img class='d-block img-fluid' src='"+(this_data && data_image?(data_image):"")+"' style='width:200px; height:200px; position:relative; margin:0 auto;' alt='Picture "+i+"'>");
+                var img_carousel =$("<img class='d-block img-fluid' src='"+(this_data && data_image?(data_image):"")+"' style='width:200px; height:200px; position:relative; margin:0 auto; object-fit:contain;' alt='Picture "+i+"'>");
                 carousel_itme.append(img_carousel);
                 carousel_control.append(carousel_itme);
                 var add = $("<div class='image_edit_btn' id ='image_edit_btn"+i+"' data-index='"+i+"' style='color:lightblue; position:absolute; top:45%; left:40%; cursor:pointer; '><span style='font-size:0.8em;'>Add a Photo</span></div>");
@@ -638,7 +638,8 @@ function getImages(){
                   $(e.data.target).toggle();
                 });
               }else {
-                var img = $("<div class='"+(!data_image && atleat_one_picture_exist?"hidden-profile-picture":"")+"'style='float:left; position:relative; "+(this_data && data_image?"cursor:pointer;":"")+ " margin-left:5px; "+(this_data && data_image?"":"border:1px solid lightgrey;")+"  "+(!data_image && atleat_one_picture_exist?"visibility: hidden;":"")+"'> <img class='d-block img-fluid' src='"+(this_data && data_image?(data_image):"")+"' style='width:200px; height:200px; position:relative; text-align:center;' alt='Picture "+(i+1)+"'></div>");
+                //var img = $("<div class='"+(!data_image && atleat_one_picture_exist?"hidden-profile-picture":"")+"'style='float:left; position:relative; "+(this_data && data_image?"cursor:pointer;":"")+ " margin-left:5px; "+(this_data && data_image?"":"border:1px solid lightgrey;")+"  "+(!data_image && atleat_one_picture_exist?"visibility: hidden;":"")+"'> <img class='d-block img-fluid' src='"+(this_data && data_image?(data_image):"")+"' style='width:200px; height:200px; position:relative; text-align:center;' alt='Picture "+(i+1)+"'></div>");
+                var img = $("<div class='"+(!data_image && atleat_one_picture_exist?"hidden-profile-picture":"")+"'style='float:left; position:relative; "+(this_data && data_image?"cursor:pointer;":"")+ " margin-left:5px; "+(this_data && data_image?"":"border:1px solid lightgrey;")+"  "+(!data_image && atleat_one_picture_exist?"visibility: hidden;":"")+"'> <img class='d-block img-fluid' src='"+(this_data && data_image?(data_image):"")+"' style='width:200px; height:200px; position:relative; text-align:center; width:200px; height:200px; object-fit:contain;' alt='Picture "+(i+1)+"'></div>");
                 $("#images_area").append(img);
                 var add = $("<div class='image_edit_btn' id ='image_edit_btn"+i+"' data-index='"+i+"' style='color:lightblue; position:absolute; top:45%; left:35%; cursor:pointer; '><span style='font-size:0.8em;'>Add a Photo</span></div>");
                 var del = $("<div class='image_edit_btn delete_picture_btn' data-imagename='"+(this_data?this_data.id:"")+"' style='color:red; position:absolute; top:0px; left:90%; cursor:pointer;  display:none; '><i class='fa fa-trash-o' aria-hidden='true' style='font-size:1.5em; color:red;'></i></div>");
@@ -666,7 +667,7 @@ function getImages(){
                  }
                  var panel =$("<div id='image_upload_panel' style='border:1px solid lightgrey; width:300px; height: 200px; position:absolute; background-color:lightgrey; color:black;'></div>");
                  var close_btn =$("<button type='button' class='close' aria-label='Close'><span aria-hidden='true'>&times;</span></button>");
-                 var photo_field =$("<div class='form-group'><form id='upload_image_form' enctype='multipart/form-data' action='upload_image' method='POST'><label for='fieldPhoto' class ='col-form-label'>Upload Photo</label><div class='col-md-12' ><input type='file' class ='form-control' required accept='image/*'' id ='fieldPhoto' name='photo' ></div><br><br><button type='submit'>Upload</button></form></div>");
+                 var photo_field =$("<div class='form-group'><form id='upload_image_form' enctype='multipart/form-data' action='upload_image' method='POST'><label for='fieldPhoto' class ='col-form-label'>Upload Photo</label><div class='col-md-12' ><input type='file' class ='form-control' required accept='image/*'' id ='fieldPhoto' name='photo' multiple ></div><br><br><button type='submit'>Upload</button></form></div>");
                  panel.append(close_btn,photo_field);
                  $("#main_content").append(panel);
                  var width = panel.width(), height=panel.height();

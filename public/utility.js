@@ -112,11 +112,19 @@
                   "cm" : 218.44
                 },
               ],
-       ethnicity:[
-                  {"displayName":"American Indian","value":"american indian"},
+   ethnicity:[
+                  {"displayName":"African American","value":"african american"},
+                  {"displayName":"Caucasian","value":"caucasian"},
                   {"displayName":"Asian","value":"asian"},
-                  {"displayName":"Black","value":"black"},
-                  {"displayName":"white","value":"white"},
+                  {"displayName":"Hispanic","value":"hispanic"},
+                  {"displayName":"Indian","value":"indian"},
+                  {"displayName":"Middle Eastern","value":"middle eastern"},
+                  {"displayName":"Native American","value":"native american"},
+                  // old values
+                  //{"displayName":"American Indian","value":"american indian"},
+                  //{"displayName":"Asian","value":"asian"},
+                  //{"displayName":"Black","value":"black"},
+                  //{"displayName":"white","value":"white"},
                 ],
                 gender:[
 
@@ -130,6 +138,17 @@
                   {"displayName":"Yes","value":"Yes"},
 
 
+                ],
+                hair_color:[
+                  {"displayName":"Black","value":"black"},
+                  {"displayName":"White","value":"white"},
+                  {"displayName":"Brown","value":"brown"},
+                  {"displayName":"Gray","value":"gray"},
+                  {"displayName":"Blonde","value":"blonde"},
+                  {"displayName":"Bald","value":"bald"},
+                  {"displayName":"Red","value":"red"},
+                  {"displayName":"Sandy","value":"sandy"},
+                  {"displayName":"Unknown","value":"unknown"},
                 ],
                 giveNoYesDropdown: function(id){
                    var selectBox = document.getElementById(id);
@@ -158,18 +177,25 @@
                   var gender = this.gender[i];
                   selectBox.options.add( new Option(gender.displayName, gender.value, gender.selected));
                   }
+               },
+               giveHairColorToDropdown: function giveGenderToDropdown(id){
+                  var selectBox = document.getElementById(id);
+                  for(var i = 0; i < this.hair_color.length; i++){
+                    var hair_color = this.hair_color[i];
+                    selectBox.options.add(new Option(hair_color.displayName, hair_color.value, hair_color.selected));
+                  }
                 },
                 isValid:{
                  "string":function(value){if(parseInt(value)){return false;}else {return true;}},
                },
 
                options_field:{
-                 sports:["Basketball","karate","football","baseball","hockey","soccer","boxing","tennis","golf","racing","swimming","volleyball"],
-                 characteristics:["crazy","Juggle"],
-                 dances:["Ballet","Jazz","Tap"],
-                 wardrobes:["Hippie","Military","70s","80s","90s","cocktail Dresses","Formal Gown","Gothic","Halloween Costume"],
-                 musicienship:["Guitar","Piano","flute"],
-                 skills:["Dancing","Singing","Sleeping"],
+                 sports: ["Basketball","Karate","Football","Baseball","Hockey","Soccer","Boxing","Tennis","Golf","Racing","Swimming","Volleyball"],
+                 characteristics: ["Energetic", "Imaginative", "Intelligence","Charisma"],
+                 dances: ["Ballet","Jazz","Tap"],
+                 wardrobes: ["Hippie","Military","70s","80s","90s","cocktail Dresses","Formal Gown","Gothic","Halloween Costume"],
+                 musicienship: ["Guitar","Piano","Flute"],
+                 skills: ["Dancing","Singing","Sleeping"],
                },
  };
 
