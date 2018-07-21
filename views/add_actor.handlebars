@@ -1,0 +1,339 @@
+<form id ="multi_upload" action="/add-multiple-users">
+<div class="container" style="background-color:white; color:black;">
+  <div class="row">
+    <div class="col">
+      <div class="drop-area" id="drop-area" ondragend="dragEnded(event);" ondragleave="dropLeft(event);"  ondragenter="dropEntered(event);" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" style="border:1px dashed grey; width:97%; height: 200px;margin:0 auto; margin-top:3px; position:relative;z-index:3;">
+        <div class="uploaded_image_area" style="width:100%; height:105px; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:1;">
+
+        </div>
+        <div class="box__input" style="z-index:5; position:absolute; bottom:0%; left:40%;">
+         <label for="file" style="display:table;margin:0 auto;  cursor:pointer;"><strong>Choose an Image</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+         <input class="box__file" style="display:none;" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
+       </div>
+      </div>
+      <div class="info_div" style="width:100%; height:30px;border-bottom:1px solid lightgrey;">
+
+      </div>
+      <button type="button" id="clear-basic-button" name="Clear" style="border-radius:10px; margin-top:3px; cursor:pointer;">Clear Basic Info</button>
+      <button type="button" id="clear-images-button" name="Clear" style="border-radius:10px; margin-top:3px; cursor:pointer;">Clear Images</button>
+      <button type="button" id="clear-button" name="Clear" style="border-radius:10px; margin-top:3px; cursor:pointer;">Clear All Fields</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" id="basic-info">
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control important" name="users[email]"id="email">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control important" name="users[password]"id="pwd">
+      </div>
+      <div class="form-group">
+        <label for="first_name">First Name:</label>
+        <input type="text" class="form-control important" name="users[first_name]"id="first_name">
+      </div>
+      <div class="form-group">
+        <label for="last_name">Last Name:</label>
+        <input type="text" class="form-control important" name="users[last_name]" id="last_name">
+      </div>
+      <div class='form-group'>
+        <label for="sex">Sex:</label>
+        <select class='form-control'name="users[sex]" id="sex">
+          <option></option>
+        </select>
+      </div>
+      <div class='form-group'>
+        <label for="is_admin">Admin User?</label>
+        <select class='form-control'name="is_admin" id="is_admin">
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-default" style=" border:1px solid grey; color:coral;border-radius:10px; cursor:pointer;">Submit</button>
+    </div>
+    <div class="col-6" id='secondary_infos'>
+
+    </div>
+    <div class="col" id="thirds_infos">
+    </div>
+  </div>
+</div>
+</form>
+<script src="https://code.jquery.com/jquery-2.0.2.min.js"> </script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript">
+$("#clear-button").click(function(){
+  $("body").find("input").val("");
+  $("body").find("select").val("");
+  Gfiles=[];
+  $(".uploaded_image_area").empty();
+  $(".drop-area").css({"background-color":"white"});
+  $(".info_div").empty();
+
+});
+$("#clear-images-button").click(function(){
+  Gfiles=[];
+  $(".uploaded_image_area").empty();
+  $(".drop-area").css({"background-color":"white"});
+  $(".info_div").empty();
+});
+$("#clear-basic-button").click(function(){
+  Gfiles=[];
+  $("#basic-info").find("input").val("");
+  $("#basic-info").find("select").val("");
+  $(".info_div").empty();
+});
+var Gfiles =[];
+
+function dropEntered(ev){
+  $(".drop-area").css({"background-color":"rgba(100,100,200,0.3)"});
+}
+function dropLeft(ev){
+  $(".drop-area").css({"background-color":"white"});
+}
+function dragEnded(ev){
+    $(".drop-area").css({"background-color":"white"});
+}
+function readImage(file,img){
+  var reader = new FileReader();
+   reader.onload = function (e) {
+       $(img).attr('src', e.target.result);
+   };
+   reader.readAsDataURL(file);
+}
+
+function dropHandler(ev){
+  $(".drop-area").css({"background-color":"white"});
+  ev.preventDefault();
+  let dt = ev.dataTransfer;
+  let files = dt.files;
+  var div= $("<div style='width:100px; height:100px; float:left; margin-left:3px;position:relative;'></div>");
+  $(".uploaded_image_area").append(div);
+  var p = $("<div id='progress-bar-top'style='position:absolute; bottom:-10px; display:none; left:0px;width:100%; height:10px;background-color:black;text-align:center; color:white; font-size:8px; line-height:10px;'>0%</div>");
+  var pp = $("<div id='progress-bar'style='position:absolute; top:0px; left:0px; width:0%; height:10px;background-color:rgba(66, 244, 217,0.3);'></div>");
+  div.append(p);
+  p.append(pp);
+  var img = $("<img src='' alt='' style='width:inherit; height:inherit;'>");
+  div.append(img);
+  readImage(files[0],img);
+  Gfiles.push({div:div,file:files});
+}
+$(".box__file").change(function(e){
+  var files = $(this).get(0).files;
+  for(var i =0; i<files.length; i++){
+    var file = files[i];
+    var div= $("<div style='width:100px; height:100px; float:left; margin-left:3px; position:relative;'></div>");
+    var p = $("<div id='progress-bar-top' style='position:absolute;display:none; bottom:-10px; left:0px;width:100%; height:10px;background-color:black;text-align:center; color:white; font-size:8px; line-height:10px;'>0%</div>");
+    var pp = $("<div id='progress-bar'style='position:absolute; top:0px; left:0px; width:10%; height:10px;background-color:rgba(66, 244, 217,0.3);'></div>");
+    div.append(p);
+    p.append(pp);
+    var img = $("<img src='' alt='' style='width:inherit; height:inherit;'>");
+    div.append(img);
+    readImage(file,img);
+    $(".uploaded_image_area").append(div);
+    Gfiles.push({div:div,file:file});
+  }
+});
+function dragOverHandler(ev){
+  ev.preventDefault();
+}
+
+function validateEmail (email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+};
+$('#multi_upload').on('submit', function(evt){
+         evt.preventDefault();
+         //see if all value are  good
+         var message;
+         var importants = $(this).find(".important");
+         $(importants).css("border-color","lightgrey");
+         var found = false;
+         for(var i =0; i<importants.length; i++){
+           if($(importants[i])[0].id==="email" && !validateEmail ($(importants[i]).val().trim())){
+             $(importants[i]).css("border-color","red");
+             found = true;
+           }
+           if($(importants[i]).prop("type") ==="text" || $(importants[i]).prop("type") ==="password"){
+             if(($(importants[i]).val().trim().length<=0)){
+                 if(($(importants[i]).val().trim().length<=0)){
+                   message ="Empty Field";
+                 }
+                  $(importants[i]).css("border-color","red");
+                  found = true;
+             }
+           }
+         }
+         if(found){
+              alert(message);
+           return;
+         }
+
+         $.ajax({
+           xhr: function() {
+                 var xhr = new window.XMLHttpRequest();
+                 // Upload progress
+                 xhr.upload.addEventListener("progress", function(evt){
+                     if (evt.lengthComputable) {
+                         var percentComplete = evt.loaded / evt.total;
+                         //Do something with upload progress
+                         console.log(Math.floor(percentComplete*100)+"%");
+                     }
+                }, false);
+                return xhr;
+             },
+             url: "add-multiple-users",
+             type: 'POST',
+             data: $(this).serialize(),
+             success: function(data){
+                 if(data.id){
+                   //upload pictures now
+                   for(var x=0; x<Gfiles.length; x++){
+                     var files = Gfiles[x].file,target= Gfiles[x].div;
+                     for (var i=0; i < files.length; i++) {
+                       (async function(i){
+                         var file = files[i];
+                         var formData = new FormData();
+                         formData.append('photos[]', file, file.name);
+                         formData.append('CustomerId',data.id);
+                         var success = await uploadPhotos(formData,target);
+                       })(i);
+                     }
+                   }
+
+                 }else{
+                   console.log(' There was a problem.');
+                   alert("Registration failed, email may already exist");
+                 }
+             },
+             error: function(){
+                console.log("error #update_form");
+              }
+        });
+       });
+function cleanText(text,lower){
+  if(!text){
+    return text;
+  }
+  var clean_text = text.replace(/_/g, " ");
+  if(lower){
+    clean_text = clean_text.toLowerCase();
+  }
+  var clean_text = clean_text.charAt(0).toUpperCase()+ clean_text.substr(1);
+  return clean_text.trim();
+}
+
+  var arr2 = [
+"skills" ,
+"sports" ,
+"dances" ,
+"wardrobes" ,
+"characteristics",
+"musicienship" ,
+];
+var arr3=["cars"];
+  var arr = ["height","eye_color","weight", "hair_color", "tattoo","piercings","facial_hair","us_citizen","neck_size","sleeve_size","waist_size","inseam_size","dress_size","jacket_size","shoe_size","bust_size","chest_size","hip_size","hat_size","union_status","union_number","emergency_number","emergency_contacts","ethnicity","state","city","street","zip","home_phone","cell_phone","birthday"];
+  var selections={
+    "ethnicity":true,
+    "height":true,
+    "sex":true,
+    "us_citizen":true,
+    "hair_color":true,
+  };
+  arr.sort();
+  for(var i =0; i<arr.length; i++){
+    if(selections[arr[i]]){
+      var div = $("  <div class='form-group'><label for='"+arr[i]+"'>"+cleanText(arr[i])+":</label><select class='form-control'name='actors["+arr[i]+"]' id='"+arr[i]+"'><option></option></select></div>");
+    }else {
+      var div = $("<div class='form-group'><label for='"+arr[i]+"'>"+cleanText(arr[i])+":</label><input type='"+(arr[i]==="birthday"?"date":"text")+"' class='form-control' name='actors["+arr[i]+"]' id='"+arr[i]+"'></div>");
+    }
+    $("#secondary_infos").append(div);
+  }
+
+  for(var i =0; i<arr2.length; i++){
+    var div_p = $("<div ></div>");
+    var sp = $("<span style='color:white; font-size:20px; color:coral;cursor:pointer;'>+</span>");
+    var div = $("<div class='form-group'><label for='"+arr2[i]+"'>"+cleanText(arr2[i])+" 1:</label><input type='text' class='form-control' name='"+arr2[i]+"[]' id='"+arr2[i]+"'></div>");
+    div_p.append(sp,div);
+    $("#thirds_infos").append(div_p);
+    sp.click({name:arr2[i],parent:div_p,counter:1},function(e){
+      e.data.counter++;
+      var div = $("<div class='form-group'><label for='"+e.data.name+"'>"+cleanText(e.data.name)+" "+e.data.counter+":</label><input type='text' class='form-control' name='"+e.data.name+"[]'id='"+e.data.name+""+e.data.counter+"'></div>");
+      e.data.parent.append(div);
+    });
+  }
+  //car
+  for(var i =0; i<arr3.length; i++){
+    var div_p = $("<div ></div>");
+    var head = $("<h6>"+cleanText(arr3[i])+" 1:</h6>");
+    div_p.append(head);
+    var sp = $("<span style='color:white; font-size:20px; color:coral;cursor:pointer;'>+</span>");
+    head.append(sp);
+    var div = $("<div class='form-group'><label for='"+arr3[i]+"'>Make:</label><input type='text' class='form-control' name='"+arr3[i]+"[make]' id='"+arr3[i]+"-make'></div>");
+    var div2 = $("<div class='form-group'><label for='"+arr3[i]+"'>Color:</label><input type='text' class='form-control' name='"+arr3[i]+"[color]' id='"+arr3[i]+"-color'></div>");
+    var div3 = $("<div class='form-group'><label for='"+arr3[i]+"'>Year:</label><input type='text' class='form-control' name='"+arr3[i]+"[year]' id='"+arr3[i]+"-year'></div>");
+    div_p.append(div,div2,div3);
+    $("#thirds_infos").append(div_p);
+    sp.click({name:arr3[i],parent:div_p,counter:1},function(e){
+      e.data.counter++;
+      var t = $("<h6>"+cleanText(e.data.name)+" "+e.data.counter+":</h6>");
+      var div = $("<div class='form-group'><label for='"+e.data.name+"'>Make:</label><input type='text' class='form-control' name='"+e.data.name+"[make]' id='"+e.data.name+"-make'></div>");
+      var div2 = $("<div class='form-group'><label for='"+e.data.name+"'>Color:</label><input type='text' class='form-control' name='"+e.data.name+"[color]' id='"+e.data.name+"-color'></div>");
+      var div3 = $("<div class='form-group'><label for='"+e.data.name+"'>Year:</label><input type='text' class='form-control' name='"+e.data.name+"[year]' id='"+e.data.name+"-year'></div>");
+      e.data.parent.append(t,div,div2,div3);
+    });
+  }
+
+  //
+
+
+
+  ($("#ethnicity").length>0?utility.giveEtnicityToDropdown("ethnicity") :"");
+  ($("#height").length>0?utility.giveHeightToDropdown("height"):"");
+  ($("#sex").length>0?utility.giveGenderToDropdown("sex"):"");
+  ($("#us_citizen").length>0?utility.giveNoYesDropdown("us_citizen"):"");
+  ($("#hair_color").length>0?utility.giveHairColorToDropdown("hair_color"):"");
+
+
+function uploadPhotos(formData,target){
+ return new Promise(resolve => {
+   $.ajax({
+   xhr: function() {
+         var xhr = new window.XMLHttpRequest();
+         // Download progress
+         xhr.addEventListener("progress", function(evt){
+             if (evt.lengthComputable) {
+               var percent = Math.round((event.loaded / event.total) * 100);
+               $(target).find("#progress-bar-top").show();
+               $(target).find("#progress-bar").css({"width":""+percent+"%"});
+               $(target).find("#progress-bar-top").text(percent+"%");
+               if (percent === 100) {
+
+               }
+             }
+         }, false);
+         return xhr;
+     },
+     url: '/upload_image_for_actor',
+     method: 'post',
+     data: formData,
+     processData: false,
+     contentType: false,
+     success: function(data){
+       if(!data.success){
+         $(target).find("#progress-bar").css({"background-color":"red"});
+         $(".info_div").empty();
+         $(".info_div").html("Sorry, registration failed, This Email may already exist");
+         $(".info_div").css({"color":"red"});
+       }else {
+         $(".info_div").empty();
+         $(".info_div").html("Actor registered successfully!");
+         $(".info_div").css({"color":"green"});
+       }
+       resolve(data.success);
+     }
+   });
+ });
+}
+</script>
